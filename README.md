@@ -13,3 +13,7 @@ It will be really great to see if we can look at the following:
 - Microphone works on board
 - Speech Recognition builds on board
 - Speech Recognition not recognizing the microphone
+
+## Motor Status
+
+## Other Status
