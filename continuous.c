@@ -142,6 +142,25 @@ check_wav_header(char *header, int expected_sr)
 static void
 recognize_from_microphone()
 {  
+	
+    ad_rec_t *ad;
+    int16 adbuf[512];
+    uint8 utt_started, in_speech;
+    int32 k;
+    char const *hyp;
+
+    if ((ad = ad_open_dev(cmd_ln_str_r(config, "-adcdev"),
+                          (int) cmd_ln_float32_r(config,
+                                                 "-samprate"))) == NULL)
+        E_FATAL("Failed to open audio device\n");
+    if (ad_start_rec(ad) < 0)
+        E_FATAL("Failed to start recording\n");
+
+    if (ps_start_utt(ps) < 0)
+        E_FATAL("Failed to start utterance\n");
+    utt_started = FALSE;
+    E_INFO("Ready....\n");
+
      /* For purposes of easy code reading, there is a lot of code here that was removed */
      for (;;) {
         if ((k = ad_read(ad, adbuf, 4096)) < 0)
