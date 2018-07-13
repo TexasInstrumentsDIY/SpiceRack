@@ -63,8 +63,8 @@
 
 #include <sphinxbase/err.h>
 #include <sphinxbase/ad.h>
-#include "kws_search.h"
-#include "pocketsphinx.h"
+#include "pocketsphinx/src/libpocketsphinx/kws_search.h"
+#include "pocketsphinx/include/pocketsphinx.h"
 
 
 glist_t detected_kws[256] = {0};
