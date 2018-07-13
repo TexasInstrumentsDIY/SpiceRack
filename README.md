@@ -1,11 +1,11 @@
 # SpiceRack
 
 
-##	An overall system block diagram
+##	Block Diagram
 
 ![PNG BLOCK DIAGRAM](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/block.PNG)
 
-##	A task breakdown 
+##	Task Breakdown
 
 ### Speech Recognition for Keyword
 - [x] Microphone connected to Beagle Bone
@@ -38,7 +38,7 @@ Elissa Lindquist-Sher
 - CAD Developer for Physical Design
 
 
-##	Risk identification and mitigation
+##	Issues
 - Time Constraint
 - Limit Budget
 - Resources 
