@@ -54,7 +54,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
-
+#include <stdlib.h>
 #if defined(_WIN32) && !defined(__CYGWIN__)
 #include <windows.h>
 #else
@@ -63,8 +63,51 @@
 
 #include <sphinxbase/err.h>
 #include <sphinxbase/ad.h>
-
+#include "kws_search.h"
 #include "pocketsphinx.h"
+
+
+glist_t detected_kws[256] = {0};
+glist_t temp[256] = {0};
+
+uint32 kws_num = 0;
+
+
+void Merger(glist_t arr[], int lo, int  mi, int hi){
+    //glist_t *temp = (glist_t*) malloc(sizeof(glist_t)*(hi-lo+1)); //new int[hi-lo+1];//temporary merger array
+    int i = lo, j = mi + 1;//i is for left-hand,j is for right-hand
+    int k = 0;//k is for the temporary array
+    while(i <= mi && j <=hi){
+        if(((kws_detection_t*) gnode_ptr(arr[i]))->prob >= ((kws_detection_t*) gnode_ptr(arr[j]))->prob)
+            temp[k++] = arr[i++];
+        else
+            temp[k++] = arr[j++];
+    }
+    //rest elements of left-half
+    while(i <= mi)
+        temp[k++] = arr[i++];
+    //rest elements of right-half
+    while(j <= hi)
+        temp[k++] = arr[j++];
+    //copy the mergered temporary array to the original array
+    for(k = 0, i = lo; i <= hi; ++i, ++k)
+        arr[i] = temp[k];
+	
+	//if(temp!=NULL)
+    //free(temp);
+}
+void MergeSortHelper(glist_t arr[], int lo, int hi){
+    int mid;
+    if(lo < hi){
+        mid = (lo + hi) >> 1;
+        MergeSortHelper(arr, lo, mid);
+        MergeSortHelper(arr, mid+1, hi);
+        Merger(arr, lo, mid, hi);
+    }
+}
+void MergeSort(glist_t arr[], int arr_size){
+    MergeSortHelper(arr, 0, arr_size-1);
+}
 
 static const arg_t cont_args_def[] = {
     POCKETSPHINX_OPTIONS,
@@ -89,7 +132,12 @@ static const arg_t cont_args_def[] = {
      ARG_BOOLEAN,
      "no",
      "Print word times in file transcription."},
-    CMDLN_EMPTY_OPTION
+    CMDLN_EMPTY_OPTION,
+	{"-kws",
+	  ARG_STRING,
+	  NULL,
+	  "File for keyphrases"
+	}
 };
 
 static ps_decoder_t *ps;
@@ -97,6 +145,10 @@ static cmd_ln_t *config;
 static FILE *rawfd;
 
 static void
+
+
+
+
 print_word_times()
 {
     int frame_rate = cmd_ln_int32_r(config, "-frate");
@@ -137,79 +189,6 @@ check_wav_header(char *header, int expected_sr)
         return 0;
     }
     return 1;
-}
-
-static void
-recognize_from_microphone()
-{  
-	
-    ad_rec_t *ad;
-    int16 adbuf[512];
-    uint8 utt_started, in_speech;
-    int32 k;
-    char const *hyp;
-
-    if ((ad = ad_open_dev(cmd_ln_str_r(config, "-adcdev"),
-                          (int) cmd_ln_float32_r(config,
-                                                 "-samprate"))) == NULL)
-        E_FATAL("Failed to open audio device\n");
-    if (ad_start_rec(ad) < 0)
-        E_FATAL("Failed to start recording\n");
-
-    if (ps_start_utt(ps) < 0)
-        E_FATAL("Failed to start utterance\n");
-    utt_started = FALSE;
-    E_INFO("Ready....\n");
-
-     /* For purposes of easy code reading, there is a lot of code here that was removed */
-     for (;;) {
-        if ((k = ad_read(ad, adbuf, 4096)) < 0)
-            E_FATAL("Failed to read audio\n");
-        ps_process_raw(ps, adbuf, k, FALSE, FALSE);
-        in_speech = ps_get_in_speech(ps);
-        if (in_speech && !utt_started) {
-            utt_started = TRUE;
-            E_INFO("I am hearing something...\n");
-        }
-        if (!in_speech && utt_started) {
-            /* speech -> silence transition, time to start new utterance  */
-            ps_end_utt(ps);
-             
-            kws_ps = ((kws_search_t*) ps->search);
- 
-            detection_list = kws_ps->detections->detect_list;
-            E_INFO("DATA: SOME PHRASES I THINK I HEARD:\n");
-            kws_num = 0;
-            while(detection_list != NULL)
-            {
-                detected_kws[kws_num++] = detection_list;
-                detection_list = gnode_next(detection_list);
-            }
-            MergeSort(detected_kws, kws_num);
-            for(i = 0; i < kws_num; i++)
-            {
-              keyphrase = ((kws_detection_t*) gnode_ptr(detected_kws[i]))->keyphrase;
-              score = ((kws_detection_t*) gnode_ptr(detected_kws[i]))->prob;
-              E_INFO("DATA:  %-18s || PROB_SCORE: %5d\n", keyphrase, score);
-            }
-          
-            keyphrase = ((kws_detection_t*) gnode_ptr(detected_kws[0]))->keyphrase;
-            
-            //if(score > PROBABILITY)
-            	//turnMotor(keyphrase);
-          
-            
-            
-	
- 
-            if (ps_start_utt(ps) < 0)
-                E_FATAL("Failed to start utterance\n");
-            utt_started = FALSE;
-            E_INFO("Ready to listen....\n");
-        }
-       // sleep_msec(100);
-    }
-    ad_close(ad);
 }
 
 /*
@@ -305,10 +284,86 @@ sleep_msec(int32 ms)
  */
 
 
+static void
+recognize_from_microphone()
+{
+    ad_rec_t *ad;
+    int16 adbuf[4096];
+    uint8 utt_started, in_speech;
+    int32 k;
+	int32 i = 0;
+	int32 score = 0;
+	kws_search_t* kws_ps = 0;
+	glist_t detection_list = 0;
+	const char* keyphrase;
+
+    if ((ad = ad_open_dev(cmd_ln_str_r(config, "-adcdev"),
+                          (int) cmd_ln_float32_r(config,
+                                                 "-samprate"))) == NULL)
+        E_FATAL("Failed to open audio device\n");
+    if (ad_start_rec(ad) < 0)
+        E_FATAL("Failed to start recording\n");
+
+    if (ps_start_utt(ps) < 0)
+        E_FATAL("Failed to start utterance\n");
+    utt_started = FALSE;
+    E_INFO("Ready to listen....\n");
+
+    for (;;) {
+        if ((k = ad_read(ad, adbuf, 4096)) < 0)
+            E_FATAL("Failed to read audio\n");
+        ps_process_raw(ps, adbuf, k, FALSE, FALSE);
+        in_speech = ps_get_in_speech(ps);
+        if (in_speech && !utt_started) {
+            utt_started = TRUE;
+            E_INFO("I am hearing something...\n");
+        }
+        if (!in_speech && utt_started) {
+            /* speech -> silence transition, time to start new utterance  */
+            ps_end_utt(ps);
+			
+			kws_ps = ((kws_search_t*) ps->search);
+
+			detection_list = kws_ps->detections->detect_list;
+			E_INFO("DATA: SOME PHRASES I THINK I HEARD:\n");
+			kws_num = 0;
+			while(detection_list != NULL)
+			{
+			    detected_kws[kws_num++] = detection_list;
+				detection_list = gnode_next(detection_list);
+			}
+			MergeSort(detected_kws, kws_num);
+			for(i = 0; i < kws_num; i++)
+			{
+			  keyphrase = ((kws_detection_t*) gnode_ptr(detected_kws[i]))->keyphrase;
+			  score = ((kws_detection_t*) gnode_ptr(detected_kws[i]))->prob;
+			  E_INFO("DATA:  %-18s || PROB_SCORE: %5d\n", keyphrase, score);
+			}
+
+			/*
+			hyp = ps_get_hyp(ps, &score);
+            if ( hyp != NULL) {
+				printf("My Best Guesses: %s |n", hyp);
+
+                fflush(stdout);
+            }*/
+
+            if (ps_start_utt(ps) < 0)
+                E_FATAL("Failed to start utterance\n");
+            utt_started = FALSE;
+            E_INFO("Ready to listen....\n");
+        }
+       // sleep_msec(100);
+    }
+    ad_close(ad);
+}
+
 int
 main(int argc, char *argv[])
 {
     char const *cfg;
+	err_set_debug_level(4);
+    printf("Error DEBUG LEVEL %d\n", err_get_debug_level());
 
     config = cmd_ln_parse_r(NULL, cont_args_def, argc, argv, TRUE);
 
