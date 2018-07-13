@@ -3,12 +3,7 @@
 
 ##	An overall system block diagram
 
-A[Microphone Listens for Keyword to Begin] -->B[Microphone Ready to Listen]
-B --> C[User Speaks Keyword]
-C --> D[Beagle Bone Processes Sound]
-D --> E[Rotate to Correct Position]
-E --> F[User Speaks Command to Finish]
-F --> G[Turn Table Returns to Initial Position]
+![alt text](https://raw.githubusercontent.com/username)
 
 ##	A task breakdown 
 
