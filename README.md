@@ -3,7 +3,7 @@
 
 ##	An overall system block diagram
 
-![alt text](https://raw.githubusercontent.com/username)
+![PNG BLOCK DIAGRAM](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/block.PNG)
 
 ##	A task breakdown 
 
@@ -24,11 +24,14 @@
 
 Ziping Liu
 - Development of Speech Recognition Software
+
 Johnathon Love
 - Development of Speech Recognition Software
+
 Reese Cook
 - Bring Up of Motor Control Function
 - Designer or Spice Rack Visual 
+
 Elissa Lindquist-Sher
 - Researcher
 - Bring Up of Motor Control Function
