@@ -2,7 +2,7 @@
 
 
 ##	Block Diagram
-
+*TODO* - Technical Block Diagram - With Pinouts and stuff. Arduino Block Diagram reference exists for Motor Control.
 ![PNG BLOCK DIAGRAM](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/block.PNG)
 
 ##	Task Breakdown
@@ -44,5 +44,5 @@ Elissa Lindquist-Sher
 - Resources 
 
 ##	An outline of the final presentation
-TODO
+*TODO*
 
