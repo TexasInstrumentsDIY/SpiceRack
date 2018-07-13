@@ -1,19 +1,50 @@
 # SpiceRack
 
-It will be really great to see if we can look at the following:
 
-1.	An overall system block diagram
-2.	A task breakdown 
-3.	Task assignments…who is doing what?
-4.	Risk identification and mitigation
-5.	An outline of the final presentation
+##	An overall system block diagram
+
+A[Microphone Listens for Keyword to Begin] -->B[Microphone Ready to Listen]
+B --> C[User Speaks Keyword]
+C --> D[Beagle Bone Processes Sound]
+D --> E[Rotate to Correct Position]
+E --> F[User Speaks Command to Finish]
+F --> G[Turn Table Returns to Initial Position]
+
+##	A task breakdown 
+
+### Speech Recognition for Keyword
+- [x] Microphone connected to Beagle Bone
+- [x] Build Speech Recognition Software to the Board
+- [ ] Integrate Microphone with Speech Recognition Software
+- [ ] Integrate Speech Recognition with Motor Control
+### Motor Movement
+- [ ] Connect Easy Driver to Motor and Beagle Bone
+- [ ] Establish Connection
+- [ ] Program 5 or 6 different positions based on input
+- [ ] Set home position to return to after function complete
+### CAD Design
+- [ ] CAD Design
+
+##	Individual Roles
+
+Ziping Liu
+- Development of Speech Recognition Software
+Johnathon Love
+- Development of Speech Recognition Software
+Reese Cook
+- Bring Up of Motor Control Function
+- Designer or Spice Rack Visual 
+Elissa Lindquist-Sher
+- Researcher
+- Bring Up of Motor Control Function
+- CAD Developer for Physical Design
 
 
-## Speech Recognition Status
-- Microphone works on board
-- Speech Recognition builds on board
-- Speech Recognition not recognizing the microphone
+##	Risk identification and mitigation
+- Time Constraint
+- Limit Budget
+- Resources 
 
-## Motor Status
+##	An outline of the final presentation
+TODO
 
-## Other Status
