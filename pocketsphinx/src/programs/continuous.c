@@ -234,7 +234,7 @@ static void
 recognize_from_microphone()
 {
     ad_rec_t *ad;
-    int16 adbuf[256];
+    int16 adbuf[512];
     uint8 utt_started, in_speech;
     int32 k;
     char const *hyp;
@@ -252,7 +252,7 @@ recognize_from_microphone()
     E_INFO("Ready....\n");
 
     for (;;) {
-        if ((k = ad_read(ad, adbuf, 256)) < 0)
+        if ((k = ad_read(ad, adbuf, 512)) < 0)
             E_FATAL("Failed to read audio\n");
         ps_process_raw(ps, adbuf, k, FALSE, FALSE);
         in_speech = ps_get_in_speech(ps);
