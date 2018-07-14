@@ -1,5 +1,6 @@
 # SpiceRack
 
+[Beagle Board Tutorial](http://beagleboard.github.io/bone101/Support/bone101/)
 
 ##	Block Diagram
 *TODO* - Technical Block Diagram - With Pinouts and stuff. Arduino Block Diagram reference exists for Motor Control.
