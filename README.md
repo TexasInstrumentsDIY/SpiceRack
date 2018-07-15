@@ -1,7 +1,7 @@
 # SpiceRack
 
 [Beagle Board Tutorial](http://beagleboard.github.io/bone101/Support/bone101/)
-[Beagle Board GPIO Tutorial using C++](http://exploringbeaglebone.com/chapter6/）
+[Beagle Board GPIO Tutorial using C++](http://exploringbeaglebone.com/chapter6/)
 ##	Block Diagram
 *TODO* - Technical Block Diagram - With Pinouts and stuff. Arduino Block Diagram reference exists for Motor Control.
 ![PNG BLOCK DIAGRAM](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/block.PNG)
