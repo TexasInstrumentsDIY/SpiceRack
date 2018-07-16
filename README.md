@@ -2,7 +2,10 @@
 
 ## Usage
 Clone to Desktop folder.
-Build Sphinxbase and Pocketsphinx.Run "make"
+
+Build Sphinxbase and Pocketsphinx.
+
+Run "make"
 
 ## Resources
 
