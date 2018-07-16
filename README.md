@@ -1,5 +1,9 @@
 # SpiceRack
 
+## Usage
+Clone to Desktop folder.
+Build Sphinxbase and Pocketsphinx.Run "make"
+
 ## Resources
 
 [Beagle Board Tutorial](http://beagleboard.github.io/bone101/Support/bone101/)
