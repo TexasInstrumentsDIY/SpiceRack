@@ -65,7 +65,7 @@
 #include <sphinxbase/ad.h>
 #include "pocketsphinx/src/libpocketsphinx/kws_search.h"
 #include "pocketsphinx/include/pocketsphinx.h"
-
+#include "GPIO.h"
 
 glist_t detected_kws[256] = {0};
 glist_t temp[256] = {0};
