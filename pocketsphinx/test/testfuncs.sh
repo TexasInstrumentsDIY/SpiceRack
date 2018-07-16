@@ -1,7 +1,7 @@
 # Utility functions and parameters for regression tests
 
 # Predefined directories you may need
-# Stupid broken CMU Facilities autoconf doesn't do /home/debian/Documents/SpiceRack/pocketsphinx
+# Stupid broken CMU Facilities autoconf doesn't do /home/debian/Desktop/SpiceRack/pocketsphinx
 builddir=../".."
 sourcedir=../".."
 tests=$sourcedir/test

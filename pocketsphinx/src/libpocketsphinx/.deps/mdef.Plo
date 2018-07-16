@@ -29,18 +29,18 @@ mdef.lo: mdef.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/arm-linux-gnueabihf/bits/stdlib-bsearch.h \
  /usr/include/arm-linux-gnueabihf/bits/stdlib-float.h \
  /usr/include/assert.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h \
  /usr/include/setjmp.h /usr/include/arm-linux-gnueabihf/bits/setjmp.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h \
  /usr/include/errno.h /usr/include/arm-linux-gnueabihf/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/arm-linux-gnueabihf/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  mdef.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h
 
 /usr/include/stdc-predef.h:
 
@@ -122,19 +122,19 @@ mdef.lo: mdef.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/assert.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h:
 
 /usr/include/setjmp.h:
 
 /usr/include/arm-linux-gnueabihf/bits/setjmp.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h:
 
 /usr/include/errno.h:
 
@@ -150,6 +150,6 @@ mdef.lo: mdef.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 mdef.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h:

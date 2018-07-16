@@ -46,40 +46,40 @@ s2_semi_mgau.lo: s2_semi_mgau.c /usr/include/stdc-predef.h \
  /usr/include/arm-linux-gnueabihf/bits/mathdef.h \
  /usr/include/arm-linux-gnueabihf/bits/mathcalls.h \
  /usr/include/arm-linux-gnueabihf/bits/mathinline.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmd_ln.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fixpoint.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmd_ln.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fixpoint.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h \
  /usr/include/setjmp.h /usr/include/arm-linux-gnueabihf/bits/setjmp.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bio.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/byteorder.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bio.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/byteorder.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h \
  /usr/include/errno.h /usr/include/arm-linux-gnueabihf/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/arm-linux-gnueabihf/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  s2_semi_mgau.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fe.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/logmath.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/mmio.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fe.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/logmath.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/mmio.h \
  acmod.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/feat.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmn.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/agc.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bitvec.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/feat.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmn.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/agc.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bitvec.h \
  ../../include/ps_mllr.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ngram_model.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ngram_model.h \
  ../../include/pocketsphinx_export.h bin_mdef.h mdef.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h \
  tmat.h hmm.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/listelem_alloc.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/listelem_alloc.h \
  ms_gauden.h vector.h pocketsphinx_internal.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/profile.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/profile.h \
  ../../include/pocketsphinx.h ../../include/cmdln_macro.h \
  ../../include/ps_lattice.h ../../include/ps_search.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fsg_model.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fsg_model.h \
  dict.h s3types.h /usr/lib/gcc/arm-linux-gnueabihf/6/include/float.h \
  dict2pid.h tied_mgau_common.h
 
@@ -199,27 +199,27 @@ s2_semi_mgau.lo: s2_semi_mgau.c /usr/include/stdc-predef.h \
 
 /usr/include/arm-linux-gnueabihf/bits/mathinline.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmd_ln.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmd_ln.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fixpoint.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fixpoint.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h:
 
 /usr/include/setjmp.h:
 
 /usr/include/arm-linux-gnueabihf/bits/setjmp.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bio.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bio.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/byteorder.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/byteorder.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h:
 
 /usr/include/errno.h:
 
@@ -235,25 +235,25 @@ s2_semi_mgau.lo: s2_semi_mgau.c /usr/include/stdc-predef.h \
 
 s2_semi_mgau.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fe.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fe.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/logmath.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/logmath.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/mmio.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/mmio.h:
 
 acmod.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/feat.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/feat.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmn.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmn.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/agc.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/agc.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bitvec.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bitvec.h:
 
 ../../include/ps_mllr.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ngram_model.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ngram_model.h:
 
 ../../include/pocketsphinx_export.h:
 
@@ -261,15 +261,15 @@ bin_mdef.h:
 
 mdef.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h:
 
 tmat.h:
 
 hmm.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/listelem_alloc.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/listelem_alloc.h:
 
 ms_gauden.h:
 
@@ -277,7 +277,7 @@ vector.h:
 
 pocketsphinx_internal.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/profile.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/profile.h:
 
 ../../include/pocketsphinx.h:
 
@@ -287,7 +287,7 @@ pocketsphinx_internal.h:
 
 ../../include/ps_search.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fsg_model.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fsg_model.h:
 
 dict.h:
 

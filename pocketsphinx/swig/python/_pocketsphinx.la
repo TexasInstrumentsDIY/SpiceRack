@@ -17,7 +17,7 @@ old_library='_pocketsphinx.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/lib -L/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxad -L/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase /home/debian/Documents/SpiceRack/pocketsphinx/src/libpocketsphinx/libpocketsphinx.la /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase/libsphinxbase.la -lpthread -lm'
+dependency_libs=' -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/lib -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxad -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase /home/debian/Desktop/SpiceRack/pocketsphinx/src/libpocketsphinx/libpocketsphinx.la /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase/libsphinxbase.la -lpthread -lm'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -39,4 +39,4 @@ dlpreopen=''
 
 # Directory that this library needs to be installed in:
 libdir='/usr/local/lib/python2.7/dist-packages/pocketsphinx'
-relink_command="(cd /home/debian/Documents/SpiceRack/pocketsphinx/swig/python; /bin/bash \"/home/debian/Documents/SpiceRack/pocketsphinx/libtool\"  --tag CC --mode=relink gcc -I/usr/include/python2.7 -I../../include -D_DATADIR=\\\"/usr/local/share/pocketsphinx\\\" -g -O2 -Wall -module -L/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/lib -L/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxad -L/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase -o _pocketsphinx.la -rpath /usr/local/lib/python2.7/dist-packages/pocketsphinx pocketsphinx_wrap.lo -lsphinxbase ../../src/libpocketsphinx/libpocketsphinx.la -lsphinxbase @inst_prefix_dir@)"
+relink_command="(cd /home/debian/Desktop/SpiceRack/pocketsphinx/swig/python; /bin/bash \"/home/debian/Desktop/SpiceRack/pocketsphinx/libtool\"  --tag CC --mode=relink gcc -I/usr/include/python2.7 -I../../include -D_DATADIR=\\\"/usr/local/share/pocketsphinx\\\" -g -O2 -Wall -module -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/lib -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxad -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase -o _pocketsphinx.la -rpath /usr/local/lib/python2.7/dist-packages/pocketsphinx pocketsphinx_wrap.lo -lsphinxbase ../../src/libpocketsphinx/libpocketsphinx.la -lsphinxbase @inst_prefix_dir@)"

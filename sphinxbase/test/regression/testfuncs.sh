@@ -1,7 +1,7 @@
 # Utility functions and parameters for regression tests
 
 # Predefined directories you may need
-# Stupid broken RedHat autoconf doesn't do /home/debian/Documents/SpiceRack/sphinxbase
+# Stupid broken RedHat autoconf doesn't do /home/debian/Desktop/SpiceRack/sphinxbase
 builddir="../.."
 sourcedir="../.."
 tests=$sourcedir/test

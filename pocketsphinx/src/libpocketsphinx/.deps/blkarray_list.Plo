@@ -4,9 +4,9 @@ blkarray_list.lo: blkarray_list.c /usr/include/stdc-predef.h \
  /usr/include/arm-linux-gnueabihf/bits/wordsize.h \
  /usr/include/arm-linux-gnueabihf/gnu/stubs.h \
  /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h \
  /usr/lib/gcc/arm-linux-gnueabihf/6/include/stdarg.h /usr/include/stdio.h \
  /usr/lib/gcc/arm-linux-gnueabihf/6/include/stddef.h \
  /usr/include/arm-linux-gnueabihf/bits/types.h \
@@ -33,8 +33,8 @@ blkarray_list.lo: blkarray_list.c /usr/include/stdc-predef.h \
  /usr/include/errno.h /usr/include/arm-linux-gnueabihf/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/arm-linux-gnueabihf/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h \
- /home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h \
+ /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h \
  /usr/include/setjmp.h /usr/include/arm-linux-gnueabihf/bits/setjmp.h \
  blkarray_list.h
 
@@ -52,11 +52,11 @@ blkarray_list.lo: blkarray_list.c /usr/include/stdc-predef.h \
 
 /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h:
 
 /usr/lib/gcc/arm-linux-gnueabihf/6/include/stdarg.h:
 
@@ -128,9 +128,9 @@ blkarray_list.lo: blkarray_list.c /usr/include/stdc-predef.h \
 
 /usr/include/asm-generic/errno-base.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h:
 
-/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h:
+/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h:
 
 /usr/include/setjmp.h:
 

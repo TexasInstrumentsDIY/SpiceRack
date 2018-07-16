@@ -437,7 +437,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/debian/Documents/SpiceRack/pocketsphinx'
+ac_pwd='/home/debian/Desktop/SpiceRack/pocketsphinx'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/bin/mkdir -p'
@@ -835,7 +835,7 @@ S["am__EXEEXT_FALSE"]=""
 S["am__EXEEXT_TRUE"]="#"
 S["LTLIBOBJS"]=""
 S["LIBOBJS"]=""
-S["SPHINXBASE_SWIG"]="/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/swig"
+S["SPHINXBASE_SWIG"]="/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/swig"
 S["SPHINXBASE_LIBS"]=""
 S["SPHINXBASE_CFLAGS"]=""
 S["GST_PLUGIN_LDFLAGS"]="-module -avoid-version -export-symbols-regex _*\\(gst_\\|Gst\\|GST_\\).*"
@@ -906,10 +906,9 @@ S["DEPDIR"]=".deps"
 S["OBJEXT"]="o"
 S["EXEEXT"]=""
 S["ac_ct_CC"]="gcc"
-S["CPPFLAGS"]=" -I/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include -I/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxb"\
-"ase"
-S["LDFLAGS"]=" -L/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/lib -L/home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxad -L/"\
-"home/debian/Documents/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase"
+S["CPPFLAGS"]=" -I/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include -I/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase"
+S["LDFLAGS"]=" -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/lib -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxad -L/home"\
+"/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase"
 S["CFLAGS"]="-g -O2 -Wall"
 S["CC"]="gcc"
 S["host_os"]="linux-gnueabihf"
@@ -934,12 +933,12 @@ S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]="strip"
-S["install_sh"]="${SHELL} /home/debian/Documents/SpiceRack/pocketsphinx/install-sh"
-S["MAKEINFO"]="${SHELL} /home/debian/Documents/SpiceRack/pocketsphinx/missing makeinfo"
-S["AUTOHEADER"]="${SHELL} /home/debian/Documents/SpiceRack/pocketsphinx/missing autoheader"
-S["AUTOMAKE"]="${SHELL} /home/debian/Documents/SpiceRack/pocketsphinx/missing automake-1.15"
-S["AUTOCONF"]="${SHELL} /home/debian/Documents/SpiceRack/pocketsphinx/missing autoconf"
-S["ACLOCAL"]="${SHELL} /home/debian/Documents/SpiceRack/pocketsphinx/missing aclocal-1.15"
+S["install_sh"]="${SHELL} /home/debian/Desktop/SpiceRack/pocketsphinx/install-sh"
+S["MAKEINFO"]="${SHELL} /home/debian/Desktop/SpiceRack/pocketsphinx/missing makeinfo"
+S["AUTOHEADER"]="${SHELL} /home/debian/Desktop/SpiceRack/pocketsphinx/missing autoheader"
+S["AUTOMAKE"]="${SHELL} /home/debian/Desktop/SpiceRack/pocketsphinx/missing automake-1.15"
+S["AUTOCONF"]="${SHELL} /home/debian/Desktop/SpiceRack/pocketsphinx/missing autoconf"
+S["ACLOCAL"]="${SHELL} /home/debian/Desktop/SpiceRack/pocketsphinx/missing aclocal-1.15"
 S["VERSION"]="5prealpha"
 S["PACKAGE"]="pocketsphinx"
 S["CYGPATH_W"]="echo"
