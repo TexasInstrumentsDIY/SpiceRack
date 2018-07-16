@@ -1,6 +1,10 @@
 # SpiceRack
 
+## Resources
+
 [Beagle Board Tutorial](http://beagleboard.github.io/bone101/Support/bone101/)
+
+[Beagle Board GPIO Tutorial using C++](http://exploringbeaglebone.com/chapter6/)
 
 ##	Block Diagram
 *TODO* - Technical Block Diagram - With Pinouts and stuff. Arduino Block Diagram reference exists for Motor Control.
@@ -12,6 +16,7 @@
 - [x] Microphone connected to Beagle Bone
 - [x] Build Speech Recognition Software to the Board
 - [ ] Integrate Microphone with Speech Recognition Software
+- [ ] Add LED Indicator for Speech Recognition State (ready, busy)
 - [ ] Integrate Speech Recognition with Motor Control
 ### Motor Movement
 - [ ] Connect Easy Driver to Motor and Beagle Bone
