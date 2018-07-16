@@ -1,5 +1,8 @@
 # created by https://www.gitignore.io/api/c,c++,linux
 
+# SpiceRack Specific Stuff
+spicerack
+
 ### C ###
 # Prerequisites
 *.d
