@@ -65,7 +65,7 @@
 #include <sphinxbase/ad.h>
 #include "pocketsphinx/src/libpocketsphinx/kws_search.h"
 #include "pocketsphinx/include/pocketsphinx.h"
-#include "GPIO.h"
+#include "gpio/GPIO.h"
 
 glist_t detected_kws[256] = {0};
 glist_t temp[256] = {0};
@@ -297,6 +297,16 @@ recognize_from_microphone()
 	glist_t detection_list = 0;
 	const char* keyphrase;
 
+    exploringBB::GPIO readyLED(36); //p8_7
+    exploringBB::GPIO busyLED(39); //p8_9
+
+    readyLED.setDirection(exploringBB::OUTPUT);
+    busyLED.setDirection(exploringBB::OUTPUT);
+
+    readyLED.setValue(exploringBB::LOW);
+    busyLED.setValue(exploringBB::HIGH);
+    
+
     if ((ad = ad_open_dev(cmd_ln_str_r(config, "-adcdev"),
                           (int) cmd_ln_float32_r(config,
                                                  "-samprate"))) == NULL)
@@ -308,6 +318,8 @@ recognize_from_microphone()
         E_FATAL("Failed to start utterance\n");
     utt_started = FALSE;
     E_INFO("Ready to listen....\n");
+    readyLED.setValue(exploringBB::HIGH);
+    busyLED.setValue(exploringBB::LOW);
 
     for (;;) {
         if ((k = ad_read(ad, adbuf, 4096)) < 0)
@@ -317,6 +329,7 @@ recognize_from_microphone()
         if (in_speech && !utt_started) {
             utt_started = TRUE;
             E_INFO("I am hearing something...\n");
+	    busyLED.setValue(exploringBB::HIGH);
         }
         if (!in_speech && utt_started) {
             /* speech -> silence transition, time to start new utterance  */
@@ -352,6 +365,7 @@ recognize_from_microphone()
                 E_FATAL("Failed to start utterance\n");
             utt_started = FALSE;
             E_INFO("Ready to listen....\n");
+	    busyLED.setValue(exploringBB::LOW);
         }
        // sleep_msec(100);
     }
@@ -361,6 +375,7 @@ recognize_from_microphone()
 int
 main(int argc, char *argv[])
 {
+
     char const *cfg;
 	err_set_debug_level(4);
     printf("Error DEBUG LEVEL %d\n", err_get_debug_level());
@@ -386,6 +401,7 @@ main(int argc, char *argv[])
     }
 
     E_INFO("%s COMPILED ON: %s, AT: %s\n\n", argv[0], __DATE__, __TIME__);
+    
 
     if (cmd_ln_str_r(config, "-infile") != NULL) {
         recognize_from_file();

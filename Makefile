@@ -7,5 +7,8 @@ OBJECTS = spicerack.o GPIO.o
 spicerack: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(PSLIB)
 
-spicerack.o: spicerack.cpp GPIO.h
+spicerack.o: spicerack.cpp gpio/GPIO.h
 	$(CXX) $(CXXFLAGS) -c spicerack.cpp $(PSLIB)
+
+GPIO.o: gpio/GPIO.cpp
+	$(CXX) $(CXXFLAGS) -c gpio/GPIO.cpp

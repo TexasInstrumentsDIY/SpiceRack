@@ -1,8 +1,8 @@
-one
-two
-three
-four
-five
-six
-start
-stop
+ONE
+TWO
+THREE
+FOUR
+FIVE
+SIX
+START
+STOP
