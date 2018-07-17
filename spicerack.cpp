@@ -298,8 +298,9 @@ recognize_from_microphone()
 	const char* keyphrase;
 
     exploringBB::GPIO readyLED(36); //p8_7
+    sleep_msec(100);
     exploringBB::GPIO busyLED(39); //p8_9
-
+    sleep_msec(100);
     readyLED.setDirection(exploringBB::OUTPUT);
     busyLED.setDirection(exploringBB::OUTPUT);
 
