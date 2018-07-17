@@ -409,11 +409,14 @@ main(int argc, char *argv[])
     } else if (cmd_ln_boolean_r(config, "-inmic")) {
         recognize_from_microphone();
     } */
-
-    exploringBB::GPIO testLED(39);
-    testLED.setDirection(exploringBB::OUTPUT);
+    E_INFO("About to init led\n");
+    exploringBB::GPIO testLED(69);
+    E_INFO("ABOUT TO SET DIR\n");
+    while(testLED.setDirection(exploringBB::OUTPUT) == -1){}
+    E_INFO("ABOUT TO ENTER WHILE LOOP\n");
     while(1)
     {
+	    E_INFO("WHILE TIME\n");
 	    sleep_msec(1000);
 	    testLED.setValue(exploringBB::LOW);
 	    sleep_msec(1000);
