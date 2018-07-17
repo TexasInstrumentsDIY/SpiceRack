@@ -37,8 +37,25 @@
 #include<sys/epoll.h>
 #include<pthread.h>
 using namespace std;
+/* Sleep for specified msec */
+static void
+sleep_msec(int32 ms)
+{
+#if (defined(_WIN32) && !defined(GNUWINCE)) || defined(_WIN32_WCE)
+    Sleep(ms);
+#else
+    /* ------------------- Unix ------------------ */
+    struct timeval tmo;
 
+    tmo.tv_sec = 0;
+    tmo.tv_usec = ms * 1000;
+
+    select(0, NULL, NULL, NULL, &tmo);
+#endif
+}
 namespace exploringBB {
+	
+
 
 /**
  *
@@ -58,7 +75,7 @@ GPIO::GPIO(int number) {
 	this->path = GPIO_PATH + this->name + "/";
 	this->exportGPIO();
 	// need to give Linux time to set up the sysfs structure
-	usleep(250000); // 250ms delay
+	sleep_msec(250); // 250ms delay
 }
 
 int GPIO::write(string path, string filename, string value){
@@ -106,6 +123,7 @@ int GPIO::setDirection(GPIO_DIRECTION dir){
    case OUTPUT:return this->write(this->path, "direction", "out");
       break;
    }
+   sleep_msec(250);
    return -1;
 }
 
@@ -116,6 +134,7 @@ int GPIO::setValue(GPIO_VALUE value){
    case LOW: return this->write(this->path, "value", "0");
       break;
    }
+   sleep_msec(250);
    return -1;
 }
 
