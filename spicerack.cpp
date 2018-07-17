@@ -297,9 +297,9 @@ recognize_from_microphone()
 	glist_t detection_list = 0;
 	const char* keyphrase;
     E_INFO("About to set ready\n");
-    exploringBB::GPIO readyLED(66); //p8_7
+    exploringBB::GPIO readyLED(26); //p8_14
     E_INFO("About to set busy\n");
-    exploringBB::GPIO busyLED(69); //p8_9
+    exploringBB::GPIO busyLED(47); //p8_15
     E_INFO("Setting direction\n");
     while(readyLED.setDirection(exploringBB::OUTPUT) == -1){};
     while(busyLED.setDirection(exploringBB::OUTPUT) == -1){};
