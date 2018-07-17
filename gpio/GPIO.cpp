@@ -35,11 +35,12 @@
 #include<fcntl.h>
 #include<unistd.h>
 #include<sys/epoll.h>
+#include<sys/time.h>
 #include<pthread.h>
 using namespace std;
 /* Sleep for specified msec */
 static void
-sleep_msec(int32 ms)
+sleep_msec(int ms)
 {
 #if (defined(_WIN32) && !defined(GNUWINCE)) || defined(_WIN32_WCE)
     Sleep(ms);

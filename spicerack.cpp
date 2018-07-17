@@ -403,11 +403,21 @@ main(int argc, char *argv[])
 
     E_INFO("%s COMPILED ON: %s, AT: %s\n\n", argv[0], __DATE__, __TIME__);
     
-
+/*
     if (cmd_ln_str_r(config, "-infile") != NULL) {
         recognize_from_file();
     } else if (cmd_ln_boolean_r(config, "-inmic")) {
         recognize_from_microphone();
+    } */
+
+    exploringBB::GPIO testLED(39);
+    testLED.setDirection(exploringBB::OUTPUT);
+    while(1)
+    {
+	    sleep_msec(1000);
+	    testLED.setValue(exploringBB::LOW);
+	    sleep_msec(1000);
+	    testLED.setValue(exploringBB::HIGH);
     }
 
     ps_free(ps);
