@@ -304,8 +304,8 @@ recognize_from_microphone()
     while(readyLED.setDirection(exploringBB::OUTPUT) == -1){};
     while(busyLED.setDirection(exploringBB::OUTPUT) == -1){};
     E_INFO("Setting initial state\n");
-    readyLED.setValue(exploringBB::LOW);
-    busyLED.setValue(exploringBB::HIGH);
+    while(readyLED.setValue(exploringBB::LOW) == -1) {};
+    while(busyLED.setValue(exploringBB::HIGH) == -1) {};
     
 
     if ((ad = ad_open_dev(cmd_ln_str_r(config, "-adcdev"),
@@ -319,8 +319,8 @@ recognize_from_microphone()
         E_FATAL("Failed to start utterance\n");
     utt_started = FALSE;
     E_INFO("Ready to listen....\n");
-    readyLED.setValue(exploringBB::HIGH);
-    busyLED.setValue(exploringBB::LOW);
+    while(readyLED.setValue(exploringBB::HIGH) == -1) {};
+    while(busyLED.setValue(exploringBB::LOW) == -1) {};
 
     for (;;) {
         if ((k = ad_read(ad, adbuf, 4096)) < 0)
