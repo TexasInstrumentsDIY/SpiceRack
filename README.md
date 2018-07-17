@@ -19,8 +19,9 @@ See guide [here](https://github.com/TexasInstrumentsDIY/SpiceRack/wiki/Installat
 ### Speech Recognition for Keyword
 - [x] Microphone connected to Beagle Bone
 - [x] Build Speech Recognition Software to the Board
-- [ ] Integrate Microphone with Speech Recognition Software
-- [ ] Add LED Indicator for Speech Recognition State (ready, busy)
+- [x] Integrate Microphone with Speech Recognition Software
+- [x] Add LED Indicator for Speech Recognition State (ready, busy)
+- [ ] Optimize Speech Recognition
 - [ ] Integrate Speech Recognition with Motor Control
 ### Motor Movement
 - [ ] Connect Easy Driver to Motor and Beagle Bone
