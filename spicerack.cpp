@@ -297,12 +297,10 @@ recognize_from_microphone()
 	glist_t detection_list = 0;
 	const char* keyphrase;
 
-    exploringBB::GPIO readyLED(36); //p8_7
-    sleep_msec(100);
-    exploringBB::GPIO busyLED(39); //p8_9
-    sleep_msec(100);
-    readyLED.setDirection(exploringBB::OUTPUT);
-    busyLED.setDirection(exploringBB::OUTPUT);
+    exploringBB::GPIO readyLED(66); //p8_7
+    exploringBB::GPIO busyLED(69); //p8_9
+    while(readyLED.setDirection(exploringBB::OUTPUT) == -1){};
+    while(busyLED.setDirection(exploringBB::OUTPUT) == -1){};
 
     readyLED.setValue(exploringBB::LOW);
     busyLED.setValue(exploringBB::HIGH);
@@ -403,12 +401,14 @@ main(int argc, char *argv[])
 
     E_INFO("%s COMPILED ON: %s, AT: %s\n\n", argv[0], __DATE__, __TIME__);
     
-/*
+
     if (cmd_ln_str_r(config, "-infile") != NULL) {
         recognize_from_file();
     } else if (cmd_ln_boolean_r(config, "-inmic")) {
         recognize_from_microphone();
-    } */
+    } 
+	
+    /*
     E_INFO("About to init led\n");
     exploringBB::GPIO testLED(69);
     E_INFO("ABOUT TO SET DIR\n");
@@ -422,7 +422,7 @@ main(int argc, char *argv[])
 	    sleep_msec(1000);
 	    testLED.setValue(exploringBB::HIGH);
     }
-
+    */
     ps_free(ps);
     cmd_ln_free_r(config);
 
