@@ -303,7 +303,7 @@ recognize_from_microphone()
     E_INFO("Setting direction\n");
     while(readyLED.setDirection(exploringBB::OUTPUT) == -1){};
     while(busyLED.setDirection(exploringBB::OUTPUT) == -1){};
-
+    E_INFO("Setting initial state\n");
     readyLED.setValue(exploringBB::LOW);
     busyLED.setValue(exploringBB::HIGH);
     
