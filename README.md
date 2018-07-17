@@ -1,11 +1,8 @@
 # SpiceRack
 
 ## Usage
-Clone to Desktop folder.
 
-Build Sphinxbase and Pocketsphinx.
-
-Run "make"
+See guide [here](https://github.com/TexasInstrumentsDIY/SpiceRack/wiki/Installation-and-Usage).
 
 ## Resources
 
