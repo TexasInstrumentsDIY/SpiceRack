@@ -31,9 +31,10 @@ See guide [here](https://github.com/TexasInstrumentsDIY/SpiceRack/wiki/Installat
 ### CAD Design
 - [ ] CAD Design
 
-### Website && Hackster.io
+### Other Deliverables
 - [ ] Website
 - [ ] Hackster.io project page
+- [ ] Video Demo
 
 ##	Individual Roles
 
