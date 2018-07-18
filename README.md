@@ -31,6 +31,10 @@ See guide [here](https://github.com/TexasInstrumentsDIY/SpiceRack/wiki/Installat
 ### CAD Design
 - [ ] CAD Design
 
+### Website && Hackster.io
+- [ ] Website
+- [ ] Hackster.io project page
+
 ##	Individual Roles
 
 Ziping Liu
