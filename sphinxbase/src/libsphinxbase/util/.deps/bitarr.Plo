@@ -1,12 +1,17 @@
 bitarr.lo: bitarr.c /usr/include/stdc-predef.h ../../../include/config.h \
  ../../../include/sphinxbase/bitarr.h /usr/include/string.h \
+ /usr/include/arm-linux-gnueabihf/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/arm-linux-gnueabihf/sys/cdefs.h \
  /usr/include/arm-linux-gnueabihf/bits/wordsize.h \
+ /usr/include/arm-linux-gnueabihf/bits/long-double.h \
  /usr/include/arm-linux-gnueabihf/gnu/stubs.h \
  /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h \
- /usr/lib/gcc/arm-linux-gnueabihf/6/include/stddef.h \
- /usr/include/xlocale.h /usr/include/arm-linux-gnueabihf/bits/string.h \
- /usr/include/arm-linux-gnueabihf/bits/string2.h /usr/include/stdlib.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/7/include/stddef.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/locale_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/__locale_t.h \
+ /usr/include/strings.h \
+ /usr/include/arm-linux-gnueabihf/bits/strings_fortified.h \
+ /usr/include/arm-linux-gnueabihf/bits/string_fortified.h \
  ../../../include/sphinxbase/prim_type.h ../../../include/sphinx_config.h \
  ../../../include/sphinxbase/sphinxbase_export.h
 
@@ -18,25 +23,31 @@ bitarr.lo: bitarr.c /usr/include/stdc-predef.h ../../../include/config.h \
 
 /usr/include/string.h:
 
+/usr/include/arm-linux-gnueabihf/bits/libc-header-start.h:
+
 /usr/include/features.h:
 
 /usr/include/arm-linux-gnueabihf/sys/cdefs.h:
 
 /usr/include/arm-linux-gnueabihf/bits/wordsize.h:
 
+/usr/include/arm-linux-gnueabihf/bits/long-double.h:
+
 /usr/include/arm-linux-gnueabihf/gnu/stubs.h:
 
 /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h:
 
-/usr/lib/gcc/arm-linux-gnueabihf/6/include/stddef.h:
+/usr/lib/gcc/arm-linux-gnueabihf/7/include/stddef.h:
 
-/usr/include/xlocale.h:
+/usr/include/arm-linux-gnueabihf/bits/types/locale_t.h:
 
-/usr/include/arm-linux-gnueabihf/bits/string.h:
+/usr/include/arm-linux-gnueabihf/bits/types/__locale_t.h:
 
-/usr/include/arm-linux-gnueabihf/bits/string2.h:
+/usr/include/strings.h:
 
-/usr/include/stdlib.h:
+/usr/include/arm-linux-gnueabihf/bits/strings_fortified.h:
+
+/usr/include/arm-linux-gnueabihf/bits/string_fortified.h:
 
 ../../../include/sphinxbase/prim_type.h:
 

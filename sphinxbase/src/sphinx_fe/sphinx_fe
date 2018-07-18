@@ -31,7 +31,7 @@ DUALCASE=1; export DUALCASE # for MKS sh
 # if CDPATH is set.
 (unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 
-relink_command="(cd /home/debian/Desktop/SpiceRack/sphinxbase/src/sphinx_fe; { test -z \"\${LIBRARY_PATH+set}\" || unset LIBRARY_PATH || { LIBRARY_PATH=; export LIBRARY_PATH; }; }; { test -z \"\${COMPILER_PATH+set}\" || unset COMPILER_PATH || { COMPILER_PATH=; export COMPILER_PATH; }; }; { test -z \"\${GCC_EXEC_PREFIX+set}\" || unset GCC_EXEC_PREFIX || { GCC_EXEC_PREFIX=; export GCC_EXEC_PREFIX; }; }; { test -z \"\${LD_RUN_PATH+set}\" || unset LD_RUN_PATH || { LD_RUN_PATH=; export LD_RUN_PATH; }; }; { test -z \"\${LD_LIBRARY_PATH+set}\" || unset LD_LIBRARY_PATH || { LD_LIBRARY_PATH=; export LD_LIBRARY_PATH; }; }; PATH=/home/debian/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games; export PATH; gcc -I../../include -I../../include -I../../src/libsphinxbase/fe -g -O2 -Wall -o \$progdir/\$file sphinx_fe.o  ../../src/libsphinxbase/.libs/libsphinxbase.so -lpthread -lm -Wl,-rpath -Wl,/home/debian/Desktop/SpiceRack/sphinxbase/src/libsphinxbase/.libs)"
+relink_command=""
 
 # This environment variable determines our operation mode.
 if test "$libtool_install_magic" = "%%%MAGIC variable%%%"; then
@@ -182,38 +182,20 @@ func_exec_program ()
   absdir=`cd "$thisdir" && pwd`
   test -n "$absdir" && thisdir="$absdir"
 
-  program=lt-'sphinx_fe'
+  program='sphinx_fe'
   progdir="$thisdir/.libs"
 
-  if test ! -f "$progdir/$program" ||
-     { file=`ls -1dt "$progdir/$program" "$progdir/../$program" 2>/dev/null | /bin/sed 1q`; \
-       test "X$file" != "X$progdir/$program"; }; then
-
-    file="$$-$program"
-
-    if test ! -d "$progdir"; then
-      mkdir "$progdir"
-    else
-      rm -f "$progdir/$file"
-    fi
-
-    # relink executable if necessary
-    if test -n "$relink_command"; then
-      if relink_command_output=`eval $relink_command 2>&1`; then :
-      else
-	$ECHO "$relink_command_output" >&2
-	rm -f "$progdir/$file"
-	exit 1
-      fi
-    fi
-
-    mv -f "$progdir/$file" "$progdir/$program" 2>/dev/null ||
-    { rm -f "$progdir/$program";
-      mv -f "$progdir/$file" "$progdir/$program"; }
-    rm -f "$progdir/$file"
-  fi
 
   if test -f "$progdir/$program"; then
+    # Add our own library path to LD_LIBRARY_PATH
+    LD_LIBRARY_PATH="/home/ubuntu/SpiceRack/sphinxbase/src/libsphinxbase/.libs:$LD_LIBRARY_PATH"
+
+    # Some systems cannot cope with colon-terminated LD_LIBRARY_PATH
+    # The second colon is a workaround for a bug in BeOS R4 sed
+    LD_LIBRARY_PATH=`$ECHO "$LD_LIBRARY_PATH" | /bin/sed 's/::*$//'`
+
+    export LD_LIBRARY_PATH
+
     if test "$libtool_execute_magic" != "%%%MAGIC variable%%%"; then
       # Run the actual program with our arguments.
       func_exec_program ${1+"$@"}

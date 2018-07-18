@@ -31,13 +31,13 @@ DUALCASE=1; export DUALCASE # for MKS sh
 # if CDPATH is set.
 (unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 
-relink_command="(cd /home/debian/Desktop/SpiceRack/pocketsphinx/src/programs; { test -z \"\${LIBRARY_PATH+set}\" || unset LIBRARY_PATH || { LIBRARY_PATH=; export LIBRARY_PATH; }; }; { test -z \"\${COMPILER_PATH+set}\" || unset COMPILER_PATH || { COMPILER_PATH=; export COMPILER_PATH; }; }; { test -z \"\${GCC_EXEC_PREFIX+set}\" || unset GCC_EXEC_PREFIX || { GCC_EXEC_PREFIX=; export GCC_EXEC_PREFIX; }; }; { test -z \"\${LD_RUN_PATH+set}\" || unset LD_RUN_PATH || { LD_RUN_PATH=; export LD_RUN_PATH; }; }; LD_LIBRARY_PATH=/usr/local/lib; export LD_LIBRARY_PATH; PATH=/home/debian/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games; export PATH; gcc -I../../include -I../../src/libpocketsphinx -I../../include -g -O2 -Wall -o \$progdir/\$file batch.o  -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/lib -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxad -L/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase ../../src/libpocketsphinx/.libs/libpocketsphinx.so /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase/.libs/libsphinxbase.so -Wl,-rpath -Wl,/home/debian/Desktop/SpiceRack/pocketsphinx/src/libpocketsphinx/.libs -Wl,-rpath -Wl,/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase/.libs)"
+relink_command=""
 
 # This environment variable determines our operation mode.
 if test "$libtool_install_magic" = "%%%MAGIC variable%%%"; then
   # install mode needs the following variables:
   generated_by_libtool_version='2.4.6'
-  notinst_deplibs=' ../../src/libpocketsphinx/libpocketsphinx.la /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase/libsphinxbase.la'
+  notinst_deplibs=' ../../src/libpocketsphinx/libpocketsphinx.la /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase/libsphinxbase.la'
 else
   # When we are sourced in execute mode, $file and $ECHO are already set.
   if test "$libtool_execute_magic" != "%%%MAGIC variable%%%"; then
@@ -182,38 +182,20 @@ func_exec_program ()
   absdir=`cd "$thisdir" && pwd`
   test -n "$absdir" && thisdir="$absdir"
 
-  program=lt-'pocketsphinx_batch'
+  program='pocketsphinx_batch'
   progdir="$thisdir/.libs"
 
-  if test ! -f "$progdir/$program" ||
-     { file=`ls -1dt "$progdir/$program" "$progdir/../$program" 2>/dev/null | /bin/sed 1q`; \
-       test "X$file" != "X$progdir/$program"; }; then
-
-    file="$$-$program"
-
-    if test ! -d "$progdir"; then
-      mkdir "$progdir"
-    else
-      rm -f "$progdir/$file"
-    fi
-
-    # relink executable if necessary
-    if test -n "$relink_command"; then
-      if relink_command_output=`eval $relink_command 2>&1`; then :
-      else
-	$ECHO "$relink_command_output" >&2
-	rm -f "$progdir/$file"
-	exit 1
-      fi
-    fi
-
-    mv -f "$progdir/$file" "$progdir/$program" 2>/dev/null ||
-    { rm -f "$progdir/$program";
-      mv -f "$progdir/$file" "$progdir/$program"; }
-    rm -f "$progdir/$file"
-  fi
 
   if test -f "$progdir/$program"; then
+    # Add our own library path to LD_LIBRARY_PATH
+    LD_LIBRARY_PATH="/home/ubuntu/SpiceRack/pocketsphinx/src/libpocketsphinx/.libs:/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase/.libs:$LD_LIBRARY_PATH"
+
+    # Some systems cannot cope with colon-terminated LD_LIBRARY_PATH
+    # The second colon is a workaround for a bug in BeOS R4 sed
+    LD_LIBRARY_PATH=`$ECHO "$LD_LIBRARY_PATH" | /bin/sed 's/::*$//'`
+
+    export LD_LIBRARY_PATH
+
     if test "$libtool_execute_magic" != "%%%MAGIC variable%%%"; then
       # Run the actual program with our arguments.
       func_exec_program ${1+"$@"}

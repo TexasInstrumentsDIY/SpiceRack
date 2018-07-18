@@ -1,88 +1,116 @@
 state_align_search.lo: state_align_search.c /usr/include/stdc-predef.h \
  state_align_search.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h \
  pocketsphinx_internal.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmd_ln.h \
- /usr/include/stdio.h /usr/include/features.h \
- /usr/include/arm-linux-gnueabihf/sys/cdefs.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmd_ln.h \
+ /usr/include/stdio.h \
+ /usr/include/arm-linux-gnueabihf/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/arm-linux-gnueabihf/sys/cdefs.h \
  /usr/include/arm-linux-gnueabihf/bits/wordsize.h \
+ /usr/include/arm-linux-gnueabihf/bits/long-double.h \
  /usr/include/arm-linux-gnueabihf/gnu/stubs.h \
  /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h \
- /usr/lib/gcc/arm-linux-gnueabihf/6/include/stddef.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/7/include/stddef.h \
  /usr/include/arm-linux-gnueabihf/bits/types.h \
- /usr/include/arm-linux-gnueabihf/bits/typesizes.h /usr/include/libio.h \
- /usr/include/_G_config.h /usr/include/wchar.h \
- /usr/lib/gcc/arm-linux-gnueabihf/6/include/stdarg.h \
+ /usr/include/arm-linux-gnueabihf/bits/typesizes.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/__FILE.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/FILE.h \
+ /usr/include/arm-linux-gnueabihf/bits/libio.h \
+ /usr/include/arm-linux-gnueabihf/bits/_G_config.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/__mbstate_t.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/7/include/stdarg.h \
  /usr/include/arm-linux-gnueabihf/bits/stdio_lim.h \
  /usr/include/arm-linux-gnueabihf/bits/sys_errlist.h \
  /usr/include/arm-linux-gnueabihf/bits/stdio.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fe.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fixpoint.h \
- /usr/lib/gcc/arm-linux-gnueabihf/6/include-fixed/limits.h \
- /usr/lib/gcc/arm-linux-gnueabihf/6/include-fixed/syslimits.h \
+ /usr/include/arm-linux-gnueabihf/bits/stdio2.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fe.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fixpoint.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/7/include-fixed/limits.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/7/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/arm-linux-gnueabihf/bits/posix1_lim.h \
  /usr/include/arm-linux-gnueabihf/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/arm-linux-gnueabihf/bits/posix2_lim.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/feat.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmn.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/agc.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/feat.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmn.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/agc.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h \
  /usr/include/stdlib.h /usr/include/arm-linux-gnueabihf/bits/waitflags.h \
  /usr/include/arm-linux-gnueabihf/bits/waitstatus.h \
- /usr/include/arm-linux-gnueabihf/sys/types.h /usr/include/time.h \
+ /usr/include/arm-linux-gnueabihf/bits/floatn.h \
+ /usr/include/arm-linux-gnueabihf/bits/floatn-common.h \
+ /usr/include/arm-linux-gnueabihf/sys/types.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/clock_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/clockid_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/time_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/timer_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/stdint-intn.h \
  /usr/include/endian.h /usr/include/arm-linux-gnueabihf/bits/endian.h \
  /usr/include/arm-linux-gnueabihf/bits/byteswap.h \
  /usr/include/arm-linux-gnueabihf/bits/byteswap-16.h \
+ /usr/include/arm-linux-gnueabihf/bits/uintn-identity.h \
  /usr/include/arm-linux-gnueabihf/sys/select.h \
  /usr/include/arm-linux-gnueabihf/bits/select.h \
- /usr/include/arm-linux-gnueabihf/bits/sigset.h \
- /usr/include/arm-linux-gnueabihf/bits/time.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/sigset_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/__sigset_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/struct_timeval.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/struct_timespec.h \
+ /usr/include/arm-linux-gnueabihf/bits/select2.h \
  /usr/include/arm-linux-gnueabihf/sys/sysmacros.h \
+ /usr/include/arm-linux-gnueabihf/bits/sysmacros.h \
  /usr/include/arm-linux-gnueabihf/bits/pthreadtypes.h \
+ /usr/include/arm-linux-gnueabihf/bits/thread-shared-types.h \
+ /usr/include/arm-linux-gnueabihf/bits/pthreadtypes-arch.h \
  /usr/include/alloca.h \
  /usr/include/arm-linux-gnueabihf/bits/stdlib-bsearch.h \
  /usr/include/arm-linux-gnueabihf/bits/stdlib-float.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/logmath.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/profile.h \
+ /usr/include/arm-linux-gnueabihf/bits/stdlib.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/logmath.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/profile.h \
  ../../include/pocketsphinx.h ../../include/pocketsphinx_export.h \
  ../../include/cmdln_macro.h ../../include/ps_lattice.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ngram_model.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/mmio.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ngram_model.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/mmio.h \
  ../../include/ps_mllr.h ../../include/ps_search.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fsg_model.h \
- /usr/include/string.h /usr/include/xlocale.h \
- /usr/include/arm-linux-gnueabihf/bits/string.h \
- /usr/include/arm-linux-gnueabihf/bits/string2.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bitvec.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fsg_model.h \
+ /usr/include/string.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/locale_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/__locale_t.h \
+ /usr/include/strings.h \
+ /usr/include/arm-linux-gnueabihf/bits/strings_fortified.h \
+ /usr/include/arm-linux-gnueabihf/bits/string_fortified.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bitvec.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h \
  /usr/include/setjmp.h /usr/include/arm-linux-gnueabihf/bits/setjmp.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/listelem_alloc.h \
+ /usr/include/arm-linux-gnueabihf/bits/setjmp2.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/listelem_alloc.h \
  acmod.h \
- /home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h \
+ /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h \
  /usr/include/errno.h /usr/include/arm-linux-gnueabihf/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/arm-linux-gnueabihf/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  bin_mdef.h mdef.h tmat.h hmm.h dict.h s3types.h \
- /usr/lib/gcc/arm-linux-gnueabihf/6/include/float.h /usr/include/assert.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/7/include/float.h /usr/include/assert.h \
  dict2pid.h ps_alignment.h
 
 /usr/include/stdc-predef.h:
 
 state_align_search.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/prim_type.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinx_config.h:
 
 pocketsphinx_internal.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmd_ln.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmd_ln.h:
 
 /usr/include/stdio.h:
+
+/usr/include/arm-linux-gnueabihf/bits/libc-header-start.h:
 
 /usr/include/features.h:
 
@@ -90,23 +118,29 @@ pocketsphinx_internal.h:
 
 /usr/include/arm-linux-gnueabihf/bits/wordsize.h:
 
+/usr/include/arm-linux-gnueabihf/bits/long-double.h:
+
 /usr/include/arm-linux-gnueabihf/gnu/stubs.h:
 
 /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h:
 
-/usr/lib/gcc/arm-linux-gnueabihf/6/include/stddef.h:
+/usr/lib/gcc/arm-linux-gnueabihf/7/include/stddef.h:
 
 /usr/include/arm-linux-gnueabihf/bits/types.h:
 
 /usr/include/arm-linux-gnueabihf/bits/typesizes.h:
 
-/usr/include/libio.h:
+/usr/include/arm-linux-gnueabihf/bits/types/__FILE.h:
 
-/usr/include/_G_config.h:
+/usr/include/arm-linux-gnueabihf/bits/types/FILE.h:
 
-/usr/include/wchar.h:
+/usr/include/arm-linux-gnueabihf/bits/libio.h:
 
-/usr/lib/gcc/arm-linux-gnueabihf/6/include/stdarg.h:
+/usr/include/arm-linux-gnueabihf/bits/_G_config.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types/__mbstate_t.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/7/include/stdarg.h:
 
 /usr/include/arm-linux-gnueabihf/bits/stdio_lim.h:
 
@@ -114,15 +148,17 @@ pocketsphinx_internal.h:
 
 /usr/include/arm-linux-gnueabihf/bits/stdio.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h:
+/usr/include/arm-linux-gnueabihf/bits/stdio2.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fe.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/sphinxbase_export.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fixpoint.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fe.h:
 
-/usr/lib/gcc/arm-linux-gnueabihf/6/include-fixed/limits.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fixpoint.h:
 
-/usr/lib/gcc/arm-linux-gnueabihf/6/include-fixed/syslimits.h:
+/usr/lib/gcc/arm-linux-gnueabihf/7/include-fixed/limits.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/7/include-fixed/syslimits.h:
 
 /usr/include/limits.h:
 
@@ -134,15 +170,15 @@ pocketsphinx_internal.h:
 
 /usr/include/arm-linux-gnueabihf/bits/posix2_lim.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/feat.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/feat.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmn.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/cmn.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/agc.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/agc.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/hash_table.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/glist.h:
 
 /usr/include/stdlib.h:
 
@@ -150,9 +186,21 @@ pocketsphinx_internal.h:
 
 /usr/include/arm-linux-gnueabihf/bits/waitstatus.h:
 
+/usr/include/arm-linux-gnueabihf/bits/floatn.h:
+
+/usr/include/arm-linux-gnueabihf/bits/floatn-common.h:
+
 /usr/include/arm-linux-gnueabihf/sys/types.h:
 
-/usr/include/time.h:
+/usr/include/arm-linux-gnueabihf/bits/types/clock_t.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types/clockid_t.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types/time_t.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types/timer_t.h:
+
+/usr/include/arm-linux-gnueabihf/bits/stdint-intn.h:
 
 /usr/include/endian.h:
 
@@ -162,17 +210,31 @@ pocketsphinx_internal.h:
 
 /usr/include/arm-linux-gnueabihf/bits/byteswap-16.h:
 
+/usr/include/arm-linux-gnueabihf/bits/uintn-identity.h:
+
 /usr/include/arm-linux-gnueabihf/sys/select.h:
 
 /usr/include/arm-linux-gnueabihf/bits/select.h:
 
-/usr/include/arm-linux-gnueabihf/bits/sigset.h:
+/usr/include/arm-linux-gnueabihf/bits/types/sigset_t.h:
 
-/usr/include/arm-linux-gnueabihf/bits/time.h:
+/usr/include/arm-linux-gnueabihf/bits/types/__sigset_t.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types/struct_timeval.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types/struct_timespec.h:
+
+/usr/include/arm-linux-gnueabihf/bits/select2.h:
 
 /usr/include/arm-linux-gnueabihf/sys/sysmacros.h:
 
+/usr/include/arm-linux-gnueabihf/bits/sysmacros.h:
+
 /usr/include/arm-linux-gnueabihf/bits/pthreadtypes.h:
+
+/usr/include/arm-linux-gnueabihf/bits/thread-shared-types.h:
+
+/usr/include/arm-linux-gnueabihf/bits/pthreadtypes-arch.h:
 
 /usr/include/alloca.h:
 
@@ -180,9 +242,11 @@ pocketsphinx_internal.h:
 
 /usr/include/arm-linux-gnueabihf/bits/stdlib-float.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/logmath.h:
+/usr/include/arm-linux-gnueabihf/bits/stdlib.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/profile.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/logmath.h:
+
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/profile.h:
 
 ../../include/pocketsphinx.h:
 
@@ -192,37 +256,43 @@ pocketsphinx_internal.h:
 
 ../../include/ps_lattice.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ngram_model.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ngram_model.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/mmio.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/mmio.h:
 
 ../../include/ps_mllr.h:
 
 ../../include/ps_search.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fsg_model.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/fsg_model.h:
 
 /usr/include/string.h:
 
-/usr/include/xlocale.h:
+/usr/include/arm-linux-gnueabihf/bits/types/locale_t.h:
 
-/usr/include/arm-linux-gnueabihf/bits/string.h:
+/usr/include/arm-linux-gnueabihf/bits/types/__locale_t.h:
 
-/usr/include/arm-linux-gnueabihf/bits/string2.h:
+/usr/include/strings.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bitvec.h:
+/usr/include/arm-linux-gnueabihf/bits/strings_fortified.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h:
+/usr/include/arm-linux-gnueabihf/bits/string_fortified.h:
+
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/bitvec.h:
+
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/ckd_alloc.h:
 
 /usr/include/setjmp.h:
 
 /usr/include/arm-linux-gnueabihf/bits/setjmp.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/listelem_alloc.h:
+/usr/include/arm-linux-gnueabihf/bits/setjmp2.h:
+
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/listelem_alloc.h:
 
 acmod.h:
 
-/home/debian/Desktop/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h:
+/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/include/sphinxbase/err.h:
 
 /usr/include/errno.h:
 
@@ -248,7 +318,7 @@ dict.h:
 
 s3types.h:
 
-/usr/lib/gcc/arm-linux-gnueabihf/6/include/float.h:
+/usr/lib/gcc/arm-linux-gnueabihf/7/include/float.h:
 
 /usr/include/assert.h:
 

@@ -346,6 +346,7 @@ recognize_from_microphone()
 			    detected_kws[kws_num++] = detection_list;
 				detection_list = gnode_next(detection_list);
 			}
+			E_INFO("Sorting phrases\n");
 			MergeSort(detected_kws, kws_num);
 			for(i = 0; i < kws_num; i++)
 			{
