@@ -12,6 +12,7 @@ See guide [here](https://github.com/TexasInstrumentsDIY/SpiceRack/wiki/Installat
 
 ##	Block Diagram
 *TODO* - Technical Block Diagram - With Pinouts and stuff. Arduino Block Diagram reference exists for Motor Control.
+![DIAGRAM](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/spicerack_bb.png)
 ![PNG BLOCK DIAGRAM](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/block.PNG)
 
 ##	Task Breakdown
