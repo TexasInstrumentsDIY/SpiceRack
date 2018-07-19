@@ -242,7 +242,7 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LD = /usr/bin/arm-linux-gnueabihf-ld
 LDFLAGS = 
 LIBOBJS = 
-LIBS = -lpthread -lm 
+LIBS = -lpulse -lpulse-simple -lpthread -lm 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
@@ -292,7 +292,7 @@ ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
 ad_cppflags = 
-ad_files = ad_oss.lo
+ad_files = ad_pulse.lo
 ad_libs = 
 am__include = include
 am__leading_dot = .
@@ -358,9 +358,9 @@ EXTRA_libsphinxad_la_SOURCES = \
 	ad_openal.c \
 	ad_win32.c
 
-libsphinxad_la_DEPENDENCIES = ad_oss.lo
+libsphinxad_la_DEPENDENCIES = ad_pulse.lo
 libsphinxad_la_LIBADD = \
-	ad_oss.lo \
+	ad_pulse.lo \
 	 \
 	$(top_builddir)/src/libsphinxbase/libsphinxbase.la
 

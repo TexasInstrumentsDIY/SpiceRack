@@ -35,10 +35,10 @@
 #define HAVE_LIBPTHREAD 1
 
 /* Define to 1 if you have the `pulse' library (-lpulse). */
-/* #undef HAVE_LIBPULSE */
+#define HAVE_LIBPULSE 1
 
 /* Define to 1 if you have the `pulse-simple' library (-lpulse-simple). */
-/* #undef HAVE_LIBPULSE_SIMPLE */
+#define HAVE_LIBPULSE_SIMPLE 1
 
 /* Define to 1 if the system has the type `long long'. */
 #define HAVE_LONG_LONG 1

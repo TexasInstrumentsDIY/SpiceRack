@@ -17,7 +17,7 @@ old_library='_pocketsphinx.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/lib -L/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxad -L/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase /home/ubuntu/SpiceRack/pocketsphinx/src/libpocketsphinx/libpocketsphinx.la /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase/libsphinxbase.la -lpthread -lm'
+dependency_libs=' -L/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/lib -L/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxad -L/home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase /home/ubuntu/SpiceRack/pocketsphinx/src/libpocketsphinx/libpocketsphinx.la /home/ubuntu/SpiceRack/pocketsphinx/../sphinxbase/src/libsphinxbase/libsphinxbase.la -lpulse -lpulse-simple -lpthread -lm'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''

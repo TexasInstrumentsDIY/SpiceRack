@@ -17,7 +17,7 @@ old_library='_sphinxbase.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' /home/ubuntu/SpiceRack/sphinxbase/src/libsphinxbase/libsphinxbase.la -lpthread -lm'
+dependency_libs=' /home/ubuntu/SpiceRack/sphinxbase/src/libsphinxbase/libsphinxbase.la -lpulse -lpulse-simple -lpthread -lm'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -39,4 +39,4 @@ dlpreopen=''
 
 # Directory that this library needs to be installed in:
 libdir='/usr/local/lib/python2.7/dist-packages/sphinxbase'
-relink_command="(cd /home/ubuntu/SpiceRack/sphinxbase/swig/python; /bin/bash \"/home/ubuntu/SpiceRack/sphinxbase/libtool\"  --tag CC --mode=relink gcc -g -O2 -Wall -module -o _sphinxbase.la -rpath /usr/local/lib/python2.7/dist-packages/sphinxbase _sphinxbase_la-sphinxbase_wrap.lo ../../src/libsphinxbase/libsphinxbase.la -lpthread -lm @inst_prefix_dir@)"
+relink_command="(cd /home/ubuntu/SpiceRack/sphinxbase/swig/python; /bin/bash \"/home/ubuntu/SpiceRack/sphinxbase/libtool\"  --tag CC --mode=relink gcc -g -O2 -Wall -module -o _sphinxbase.la -rpath /usr/local/lib/python2.7/dist-packages/sphinxbase _sphinxbase_la-sphinxbase_wrap.lo ../../src/libsphinxbase/libsphinxbase.la -lpulse -lpulse-simple -lpthread -lm @inst_prefix_dir@)"

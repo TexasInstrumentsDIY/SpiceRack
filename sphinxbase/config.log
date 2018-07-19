@@ -716,246 +716,22 @@ configure:14054: $? = 0
 configure:14063: result: yes
 configure:14136: checking pulse/pulseaudio.h usability
 configure:14136: gcc -c -g -O2 -Wall  conftest.c >&5
-conftest.c:67:10: fatal error: pulse/pulseaudio.h: No such file or directory
- #include <pulse/pulseaudio.h>
-          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-configure:14136: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "sphinxbase"
-| #define PACKAGE_TARNAME "sphinxbase"
-| #define PACKAGE_VERSION "5prealpha"
-| #define PACKAGE_STRING "sphinxbase 5prealpha"
-| #define PACKAGE_BUGREPORT ""
-| #define PACKAGE_URL ""
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define STDC_HEADERS 1
-| #define RETSIGTYPE void
-| #define HAVE_LONG_LONG 1
-| #define SIZEOF_LONG_LONG 8
-| #define SIZEOF_LONG 4
-| #define HAVE_POPEN 1
-| #define HAVE_PERROR 1
-| #define HAVE_SNPRINTF 1
-| #define WITH_LAPACK /**/
-| #define HAVE_LIBM 1
-| #define HAVE_PTHREAD_H 1
-| #define HAVE_LIBPTHREAD 1
-| #define ENABLE_THREADS /**/
-| /* end confdefs.h.  */
-| #include <stdio.h>
-| #ifdef HAVE_SYS_TYPES_H
-| # include <sys/types.h>
-| #endif
-| #ifdef HAVE_SYS_STAT_H
-| # include <sys/stat.h>
-| #endif
-| #ifdef STDC_HEADERS
-| # include <stdlib.h>
-| # include <stddef.h>
-| #else
-| # ifdef HAVE_STDLIB_H
-| #  include <stdlib.h>
-| # endif
-| #endif
-| #ifdef HAVE_STRING_H
-| # if !defined STDC_HEADERS && defined HAVE_MEMORY_H
-| #  include <memory.h>
-| # endif
-| # include <string.h>
-| #endif
-| #ifdef HAVE_STRINGS_H
-| # include <strings.h>
-| #endif
-| #ifdef HAVE_INTTYPES_H
-| # include <inttypes.h>
-| #endif
-| #ifdef HAVE_STDINT_H
-| # include <stdint.h>
-| #endif
-| #ifdef HAVE_UNISTD_H
-| # include <unistd.h>
-| #endif
-| #include <pulse/pulseaudio.h>
-configure:14136: result: no
+configure:14136: $? = 0
+configure:14136: result: yes
 configure:14136: checking pulse/pulseaudio.h presence
 configure:14136: gcc -E  conftest.c
-conftest.c:34:10: fatal error: pulse/pulseaudio.h: No such file or directory
- #include <pulse/pulseaudio.h>
-          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-configure:14136: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "sphinxbase"
-| #define PACKAGE_TARNAME "sphinxbase"
-| #define PACKAGE_VERSION "5prealpha"
-| #define PACKAGE_STRING "sphinxbase 5prealpha"
-| #define PACKAGE_BUGREPORT ""
-| #define PACKAGE_URL ""
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define STDC_HEADERS 1
-| #define RETSIGTYPE void
-| #define HAVE_LONG_LONG 1
-| #define SIZEOF_LONG_LONG 8
-| #define SIZEOF_LONG 4
-| #define HAVE_POPEN 1
-| #define HAVE_PERROR 1
-| #define HAVE_SNPRINTF 1
-| #define WITH_LAPACK /**/
-| #define HAVE_LIBM 1
-| #define HAVE_PTHREAD_H 1
-| #define HAVE_LIBPTHREAD 1
-| #define ENABLE_THREADS /**/
-| /* end confdefs.h.  */
-| #include <pulse/pulseaudio.h>
-configure:14136: result: no
+configure:14136: $? = 0
+configure:14136: result: yes
 configure:14136: checking for pulse/pulseaudio.h
-configure:14136: result: no
-configure:14233: checking alsa/asoundlib.h usability
-configure:14233: gcc -c -g -O2 -Wall  conftest.c >&5
-conftest.c:67:10: fatal error: alsa/asoundlib.h: No such file or directory
- #include <alsa/asoundlib.h>
-          ^~~~~~~~~~~~~~~~~~
-compilation terminated.
-configure:14233: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "sphinxbase"
-| #define PACKAGE_TARNAME "sphinxbase"
-| #define PACKAGE_VERSION "5prealpha"
-| #define PACKAGE_STRING "sphinxbase 5prealpha"
-| #define PACKAGE_BUGREPORT ""
-| #define PACKAGE_URL ""
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define STDC_HEADERS 1
-| #define RETSIGTYPE void
-| #define HAVE_LONG_LONG 1
-| #define SIZEOF_LONG_LONG 8
-| #define SIZEOF_LONG 4
-| #define HAVE_POPEN 1
-| #define HAVE_PERROR 1
-| #define HAVE_SNPRINTF 1
-| #define WITH_LAPACK /**/
-| #define HAVE_LIBM 1
-| #define HAVE_PTHREAD_H 1
-| #define HAVE_LIBPTHREAD 1
-| #define ENABLE_THREADS /**/
-| /* end confdefs.h.  */
-| #include <stdio.h>
-| #ifdef HAVE_SYS_TYPES_H
-| # include <sys/types.h>
-| #endif
-| #ifdef HAVE_SYS_STAT_H
-| # include <sys/stat.h>
-| #endif
-| #ifdef STDC_HEADERS
-| # include <stdlib.h>
-| # include <stddef.h>
-| #else
-| # ifdef HAVE_STDLIB_H
-| #  include <stdlib.h>
-| # endif
-| #endif
-| #ifdef HAVE_STRING_H
-| # if !defined STDC_HEADERS && defined HAVE_MEMORY_H
-| #  include <memory.h>
-| # endif
-| # include <string.h>
-| #endif
-| #ifdef HAVE_STRINGS_H
-| # include <strings.h>
-| #endif
-| #ifdef HAVE_INTTYPES_H
-| # include <inttypes.h>
-| #endif
-| #ifdef HAVE_STDINT_H
-| # include <stdint.h>
-| #endif
-| #ifdef HAVE_UNISTD_H
-| # include <unistd.h>
-| #endif
-| #include <alsa/asoundlib.h>
-configure:14233: result: no
-configure:14233: checking alsa/asoundlib.h presence
-configure:14233: gcc -E  conftest.c
-conftest.c:34:10: fatal error: alsa/asoundlib.h: No such file or directory
- #include <alsa/asoundlib.h>
-          ^~~~~~~~~~~~~~~~~~
-compilation terminated.
-configure:14233: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "sphinxbase"
-| #define PACKAGE_TARNAME "sphinxbase"
-| #define PACKAGE_VERSION "5prealpha"
-| #define PACKAGE_STRING "sphinxbase 5prealpha"
-| #define PACKAGE_BUGREPORT ""
-| #define PACKAGE_URL ""
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define STDC_HEADERS 1
-| #define RETSIGTYPE void
-| #define HAVE_LONG_LONG 1
-| #define SIZEOF_LONG_LONG 8
-| #define SIZEOF_LONG 4
-| #define HAVE_POPEN 1
-| #define HAVE_PERROR 1
-| #define HAVE_SNPRINTF 1
-| #define WITH_LAPACK /**/
-| #define HAVE_LIBM 1
-| #define HAVE_PTHREAD_H 1
-| #define HAVE_LIBPTHREAD 1
-| #define ENABLE_THREADS /**/
-| /* end confdefs.h.  */
-| #include <alsa/asoundlib.h>
-configure:14233: result: no
-configure:14233: checking for alsa/asoundlib.h
-configure:14233: result: no
+configure:14136: result: yes
+configure:14140: checking for pa_simple_new in -lpulse-simple
+configure:14165: gcc -o conftest -g -O2 -Wall   conftest.c -lpulse-simple  -lpthread -lm  >&5
+configure:14165: $? = 0
+configure:14174: result: yes
+configure:14185: checking for pa_strerror in -lpulse
+configure:14210: gcc -o conftest -g -O2 -Wall   conftest.c -lpulse  -lpulse-simple -lpthread -lm  >&5
+configure:14210: $? = 0
+configure:14219: result: yes
 configure:14335: checking for doxygen
 configure:14363: result: no
 configure:14424: checking for a Python interpreter with version >= 2.6
@@ -990,7 +766,7 @@ configure:14906: result: -lpthread -ldl  -lutil -lm
 configure:14913: checking python extra linking flags
 configure:14920: result: -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions
 configure:14927: checking consistency of all components of python development environment
-configure:14953: gcc -o conftest -g -O2 -Wall  -I/usr/include/python2.7  conftest.c -lpthread -lm  -L/usr/lib -lpython2.7 -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions -lpthread -ldl  -lutil -lm >&5
+configure:14953: gcc -o conftest -g -O2 -Wall  -I/usr/include/python2.7  conftest.c -lpulse -lpulse-simple -lpthread -lm  -L/usr/lib -lpython2.7 -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions -lpthread -ldl  -lutil -lm >&5
 configure:14953: $? = 0
 configure:14970: result: yes
 configure:15001: checking for swig
@@ -1019,52 +795,51 @@ generated by GNU Autoconf 2.69.  Invocation command line was
 
 on arm
 
-config.status:1169: creating sphinxbase.pc
-config.status:1169: creating Makefile
-config.status:1169: creating include/Makefile
-config.status:1169: creating include/sphinxbase/Makefile
-config.status:1169: creating src/Makefile
-config.status:1169: creating src/libsphinxad/Makefile
-config.status:1169: creating src/libsphinxbase/Makefile
-config.status:1169: creating src/libsphinxbase/util/Makefile
-config.status:1169: creating src/libsphinxbase/feat/Makefile
-config.status:1169: creating src/libsphinxbase/fe/Makefile
-config.status:1169: creating src/libsphinxbase/lm/Makefile
-config.status:1169: creating src/sphinx_fe/Makefile
-config.status:1169: creating src/sphinx_cepview/Makefile
-config.status:1169: creating src/sphinx_jsgf2fsg/Makefile
-config.status:1169: creating src/sphinx_adtools/Makefile
-config.status:1169: creating src/sphinx_lmtools/Makefile
-config.status:1169: creating doc/Makefile
-config.status:1169: creating doc/doxyfile
-config.status:1169: creating test/Makefile
-config.status:1169: creating test/unit/testfuncs.sh
-config.status:1169: creating test/unit/Makefile
-config.status:1169: creating test/unit/test_alloc/Makefile
-config.status:1169: creating test/unit/test_bitvec/Makefile
-config.status:1169: creating test/unit/test_case/Makefile
-config.status:1169: creating test/unit/test_string/Makefile
-config.status:1169: creating test/unit/test_cmdln/Makefile
-config.status:1169: creating test/unit/test_hash/Makefile
-config.status:1169: creating test/unit/test_matrix/Makefile
-config.status:1169: creating test/unit/test_feat/Makefile
-config.status:1169: creating test/unit/test_fe/Makefile
-config.status:1169: creating test/unit/test_logmath/Makefile
-config.status:1169: creating test/unit/test_lineiter/Makefile
-config.status:1169: creating test/unit/test_ngram/Makefile
-config.status:1169: creating test/unit/test_fsg/Makefile
-config.status:1169: creating test/unit/test_thread/Makefile
-config.status:1169: creating test/unit/test_util/Makefile
-config.status:1169: creating test/regression/testfuncs.sh
-config.status:1169: creating test/regression/Makefile
-config.status:1169: creating swig/Makefile
-config.status:1169: creating swig/python/Makefile
-config.status:1169: creating include/config.h
-config.status:1350: include/config.h is unchanged
-config.status:1169: creating include/sphinx_config.h
-config.status:1350: include/sphinx_config.h is unchanged
-config.status:1398: executing depfiles commands
-config.status:1398: executing libtool commands
+config.status:1171: creating sphinxbase.pc
+config.status:1171: creating Makefile
+config.status:1171: creating include/Makefile
+config.status:1171: creating include/sphinxbase/Makefile
+config.status:1171: creating src/Makefile
+config.status:1171: creating src/libsphinxad/Makefile
+config.status:1171: creating src/libsphinxbase/Makefile
+config.status:1171: creating src/libsphinxbase/util/Makefile
+config.status:1171: creating src/libsphinxbase/feat/Makefile
+config.status:1171: creating src/libsphinxbase/fe/Makefile
+config.status:1171: creating src/libsphinxbase/lm/Makefile
+config.status:1171: creating src/sphinx_fe/Makefile
+config.status:1171: creating src/sphinx_cepview/Makefile
+config.status:1171: creating src/sphinx_jsgf2fsg/Makefile
+config.status:1171: creating src/sphinx_adtools/Makefile
+config.status:1171: creating src/sphinx_lmtools/Makefile
+config.status:1171: creating doc/Makefile
+config.status:1171: creating doc/doxyfile
+config.status:1171: creating test/Makefile
+config.status:1171: creating test/unit/testfuncs.sh
+config.status:1171: creating test/unit/Makefile
+config.status:1171: creating test/unit/test_alloc/Makefile
+config.status:1171: creating test/unit/test_bitvec/Makefile
+config.status:1171: creating test/unit/test_case/Makefile
+config.status:1171: creating test/unit/test_string/Makefile
+config.status:1171: creating test/unit/test_cmdln/Makefile
+config.status:1171: creating test/unit/test_hash/Makefile
+config.status:1171: creating test/unit/test_matrix/Makefile
+config.status:1171: creating test/unit/test_feat/Makefile
+config.status:1171: creating test/unit/test_fe/Makefile
+config.status:1171: creating test/unit/test_logmath/Makefile
+config.status:1171: creating test/unit/test_lineiter/Makefile
+config.status:1171: creating test/unit/test_ngram/Makefile
+config.status:1171: creating test/unit/test_fsg/Makefile
+config.status:1171: creating test/unit/test_thread/Makefile
+config.status:1171: creating test/unit/test_util/Makefile
+config.status:1171: creating test/regression/testfuncs.sh
+config.status:1171: creating test/regression/Makefile
+config.status:1171: creating swig/Makefile
+config.status:1171: creating swig/python/Makefile
+config.status:1171: creating include/config.h
+config.status:1171: creating include/sphinx_config.h
+config.status:1352: include/sphinx_config.h is unchanged
+config.status:1400: executing depfiles commands
+config.status:1400: executing libtool commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -1102,13 +877,12 @@ ac_cv_env_target_alias_value=
 ac_cv_func_perror=yes
 ac_cv_func_popen=yes
 ac_cv_func_snprintf=yes
-ac_cv_header_alsa_asoundlib_h=no
 ac_cv_header_dlfcn_h=yes
 ac_cv_header_errno_h=yes
 ac_cv_header_inttypes_h=yes
 ac_cv_header_memory_h=yes
 ac_cv_header_pthread_h=yes
-ac_cv_header_pulse_pulseaudio_h=no
+ac_cv_header_pulse_pulseaudio_h=yes
 ac_cv_header_stdc=yes
 ac_cv_header_stdint_h=yes
 ac_cv_header_stdlib_h=yes
@@ -1121,6 +895,8 @@ ac_cv_host=armv7l-unknown-linux-gnueabihf
 ac_cv_lib_lapack_sgesv_=no
 ac_cv_lib_m_log=yes
 ac_cv_lib_pthread_pthread_create=yes
+ac_cv_lib_pulse_pa_strerror=yes
+ac_cv_lib_pulse_simple_pa_simple_new=yes
 ac_cv_objext=o
 ac_cv_path_EGREP='/bin/grep -E'
 ac_cv_path_FGREP='/bin/grep -F'
@@ -1240,7 +1016,7 @@ LAPACK_LITE_TRUE=''
 LD='/usr/bin/arm-linux-gnueabihf-ld'
 LDFLAGS=''
 LIBOBJS=''
-LIBS='-lpthread -lm '
+LIBS='-lpulse -lpulse-simple -lpthread -lm '
 LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 LIPO=''
 LN_S='ln -s'
@@ -1290,7 +1066,7 @@ ac_ct_AR='ar'
 ac_ct_CC='gcc'
 ac_ct_DUMPBIN=''
 ad_cppflags=''
-ad_files='ad_oss.lo'
+ad_files='ad_pulse.lo'
 ad_libs=''
 am__EXEEXT_FALSE=''
 am__EXEEXT_TRUE='#'
@@ -1380,24 +1156,8 @@ target_alias=''
 #define HAVE_PTHREAD_H 1
 #define HAVE_LIBPTHREAD 1
 #define ENABLE_THREADS /**/
+#define HAVE_LIBPULSE_SIMPLE 1
+#define HAVE_LIBPULSE 1
 #define HAVE_PYTHON "2.7"
 
 configure: exit 0
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by sphinxbase config.status 5prealpha, which was
-generated by GNU Autoconf 2.69.  Invocation command line was
-
-  CONFIG_FILES    = 
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status include/config.h
-
-on arm
-
-config.status:1169: creating include/config.h
-config.status:1350: include/config.h is unchanged
