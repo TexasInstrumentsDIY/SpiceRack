@@ -10,6 +10,8 @@ See guide [here](https://github.com/TexasInstrumentsDIY/SpiceRack/wiki/Installat
 
 [Beagle Board GPIO Tutorial using C++](http://exploringbeaglebone.com/chapter6/)
 
+[Driver Hook-up Guide](https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide)
+
 ##	Block Diagram
 *TODO* - Technical Block Diagram - With Pinouts and stuff. Arduino Block Diagram reference exists for Motor Control.
 ![DIAGRAM](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/0f0d602c3d073a619843a913522dac537c4898c5/spicerack_bb.png)
