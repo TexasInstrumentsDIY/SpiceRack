@@ -67,10 +67,10 @@
 #include "pocketsphinx/include/pocketsphinx.h"
 #include "gpio/GPIO.h"
 
-glist_t detected_kws[256] = {0};
-glist_t temp[256] = {0};
+glist_t detected_kws[256] = {0}; // pre-allocate 256 sized array for holding detected keywords
+glist_t temp[256] = {0}; // temporary array used when sorting detected_kws array based on prob score 
 
-uint32 kws_num = 0;
+uint32 kws_num = 0; // a variable that holds the count of keywords spotted
 
 
 void Merger(glist_t arr[], int lo, int  mi, int hi){
@@ -105,6 +105,7 @@ void MergeSortHelper(glist_t arr[], int lo, int hi){
         Merger(arr, lo, mid, hi);
     }
 }
+// function that sorts an array based on probability size
 void MergeSort(glist_t arr[], int arr_size){
     MergeSortHelper(arr, 0, arr_size-1);
 }
@@ -189,72 +190,6 @@ check_wav_header(char *header, int expected_sr)
         return 0;
     }
     return 1;
-}
-
-/*
- * Continuous recognition from a file
- */
-static void
-recognize_from_file()
-{
-    int16 adbuf[2048];
-    const char *fname;
-    const char *hyp;
-    int32 k;
-    uint8 utt_started, in_speech;
-    int32 print_times = cmd_ln_boolean_r(config, "-time");
-
-    fname = cmd_ln_str_r(config, "-infile");
-    if ((rawfd = fopen(fname, "rb")) == NULL) {
-        E_FATAL_SYSTEM("Failed to open file '%s' for reading",
-                       fname);
-    }
-    
-    if (strlen(fname) > 4 && strcmp(fname + strlen(fname) - 4, ".wav") == 0) {
-        char waveheader[44];
-	fread(waveheader, 1, 44, rawfd);
-	if (!check_wav_header(waveheader, (int)cmd_ln_float32_r(config, "-samprate")))
-    	    E_FATAL("Failed to process file '%s' due to format mismatch.\n", fname);
-    }
-
-    if (strlen(fname) > 4 && strcmp(fname + strlen(fname) - 4, ".mp3") == 0) {
-	E_FATAL("Can not decode mp3 files, convert input file to WAV 16kHz 16-bit mono before decoding.\n");
-    }
-    
-    ps_start_utt(ps);
-    utt_started = FALSE;
-
-    while ((k = fread(adbuf, sizeof(int16), 2048, rawfd)) > 0) {
-        ps_process_raw(ps, adbuf, k, FALSE, FALSE);
-        in_speech = ps_get_in_speech(ps);
-        if (in_speech && !utt_started) {
-            utt_started = TRUE;
-        } 
-        if (!in_speech && utt_started) {
-            ps_end_utt(ps);
-            hyp = ps_get_hyp(ps, NULL);
-            if (hyp != NULL)
-        	printf("%s\n", hyp);
-            if (print_times)
-        	print_word_times();
-            fflush(stdout);
-
-            ps_start_utt(ps);
-            utt_started = FALSE;
-        }
-    }
-    ps_end_utt(ps);
-    if (utt_started) {
-        hyp = ps_get_hyp(ps, NULL);
-        if (hyp != NULL) {
-    	    printf("%s\n", hyp);
-    	    if (print_times) {
-    		print_word_times();
-	    }
-	}
-    }
-    
-    fclose(rawfd);
 }
 
 /* Sleep for specified msec */
@@ -403,15 +338,12 @@ main(int argc, char *argv[])
     }
 
     E_INFO("%s COMPILED ON: %s, AT: %s\n\n", argv[0], __DATE__, __TIME__);
-    
-
-    if (cmd_ln_str_r(config, "-infile") != NULL) {
-        recognize_from_file();
-    } else if (cmd_ln_boolean_r(config, "-inmic")) {
+        
+    if (cmd_ln_boolean_r(config, "-inmic")) {
         recognize_from_microphone();
     } 
 	
-    /*
+    /* This here was used to debug GPIO manipulation
     E_INFO("About to init led\n");
     exploringBB::GPIO testLED(69);
     E_INFO("ABOUT TO SET DIR\n");
@@ -431,28 +363,3 @@ main(int argc, char *argv[])
 
     return 0;
 }
-
-#if defined(_WIN32_WCE)
-#pragma comment(linker,"/entry:mainWCRTStartup")
-#include <windows.h>
-//Windows Mobile has the Unicode main only
-int
-wmain(int32 argc, wchar_t * wargv[])
-{
-    char **argv;
-    size_t wlen;
-    size_t len;
-    int i;
-
-    argv = malloc(argc * sizeof(char *));
-    for (i = 0; i < argc; i++) {
-        wlen = lstrlenW(wargv[i]);
-        len = wcstombs(NULL, wargv[i], wlen);
-        argv[i] = malloc(len + 1);
-        wcstombs(argv[i], wargv[i], wlen);
-    }
-
-    //assuming ASCII parameters
-    return main(argc, argv);
-}
-#endif
