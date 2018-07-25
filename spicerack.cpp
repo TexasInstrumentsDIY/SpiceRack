@@ -35,9 +35,10 @@
  *
  */
 /*
- * continuous.c - Simple pocketsphinx command-line application to test
- *                both continuous listening/silence filtering from microphone
- *                and continuous file transcription.
+ * spicerack.cpp - Simple pocketsphinx command-line application to test
+ *                both continuous listening/silence filtering from microphone, 
+ *                thereby controlling the motor.
+ *                
  */
 
 /*
