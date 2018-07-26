@@ -224,14 +224,16 @@ static void
 recognize_from_microphone()
 {
     ad_rec_t *ad;
-    int16 adbuf[4096];
-    uint8 utt_started, in_speech;
+    int16 adbuf[4096]; // Buffer for holding audio data from mic
+    uint8 utt_started, in_speech; // Variables to determine speech status
     int32 k;
 	int32 i = 0;
 	int32 score = 0;
 	kws_search_t* kws_ps = 0;
 	glist_t detection_list = 0;
 	const char* keyphrase;
+	
+    /* Initialize GPIO pins for speech status LED's */
     E_INFO("About to set ready\n");
     exploringBB::GPIO readyLED(26); //p8_14
     E_INFO("About to set busy\n");
@@ -243,7 +245,7 @@ recognize_from_microphone()
     while(readyLED.setValue(exploringBB::LOW) == -1) {};
     while(busyLED.setValue(exploringBB::HIGH) == -1) {};
     
-
+    /* Check if Microphone or Speech Rec has failed to start */
     if ((ad = ad_open_dev(cmd_ln_str_r(config, "-adcdev"),
                           (int) cmd_ln_float32_r(config,
                                                  "-samprate"))) == NULL)
@@ -254,35 +256,58 @@ recognize_from_microphone()
     if (ps_start_utt(ps) < 0)
         E_FATAL("Failed to start utterance\n");
     utt_started = FALSE;
+	
+    /* Microphone is now listening for commands */
+    /* Set LED status lights to reflect speech state */
     E_INFO("Ready to listen....\n");
     while(readyLED.setValue(exploringBB::HIGH) == -1) {};
     while(busyLED.setValue(exploringBB::LOW) == -1) {};
 
-    for (;;) {
+    /* Loop indefinitely, listening for commands on each iteration */
+    /* For each iteration, listen for valid commands, and control motor accordingly*/
+    while(1) {
+	    
+	/* Read data from microphone into buffer */
         if ((k = ad_read(ad, adbuf, 4096)) < 0)
             E_FATAL("Failed to read audio\n");
+	    
+	/* Process Data from microphone using pocketsphinx */
         ps_process_raw(ps, adbuf, k, FALSE, FALSE);
         in_speech = ps_get_in_speech(ps);
+	    
+	/* The very moment that the mic hears noise */
+	/* Set utterance started status to true */
+	/* and set status LED lights to reflect */
+	/* that the microphone has started to hear something*/
         if (in_speech && !utt_started) {
             utt_started = TRUE;
             E_INFO("I am hearing something...\n");
 	    busyLED.setValue(exploringBB::HIGH);
         }
+	    
+	/* Once the microphone detects a silence after having */
+	/* heard something, begin the speech to text processing */
         if (!in_speech && utt_started) {
             /* speech -> silence transition, time to start new utterance  */
-            ps_end_utt(ps);
+            ps_end_utt(ps); // end the speech listening stage, and start speech processing
 			
+	                /* Retrieve the variable for holding data from keyword spotting */
 			kws_ps = ((kws_search_t*) ps->search);
 
+	    	        /* Retrieve the array list of spotted keywords */
 			detection_list = kws_ps->detections->detect_list;
 			E_INFO("DATA: SOME PHRASES I THINK I HEARD:\n");
 			kws_num = 0;
+	    
+	                /* Place the spotted keywords into an array*/
+			/* for easier manipulation*/
 			while(detection_list != NULL)
 			{
 			    detected_kws[kws_num++] = detection_list;
 				detection_list = gnode_next(detection_list);
 			}
 			E_INFO("Sorting phrases\n");
+		        /* Sort the spotted phrases based on probability scores */
 			MergeSort(detected_kws, kws_num);
 			for(i = 0; i < kws_num; i++)
 			{
@@ -290,15 +315,14 @@ recognize_from_microphone()
 			  score = ((kws_detection_t*) gnode_ptr(detected_kws[i]))->prob;
 			  E_INFO("DATA:  %-18s || PROB_SCORE: %5d\n", keyphrase, score);
 			}
+		
+		        /* Here is where we can analyze the spotted keyword */
+		        /* And control the motor if necessary */
+		        /* We will extract the keyword with the highest score */
+		        /* From the sorted array: detected_keywords */
+		        
 
-			/*
-			hyp = ps_get_hyp(ps, &score);
-            if ( hyp != NULL) {
-				printf("My Best Guesses: %s |n", hyp);
-
-                fflush(stdout);
-            }*/
-
+	    /* Restart the listening process again */
             if (ps_start_utt(ps) < 0)
                 E_FATAL("Failed to start utterance\n");
             utt_started = FALSE;
@@ -331,6 +355,7 @@ main(int argc, char *argv[])
 	return 1;
     }
 
+    /* Initialize Speech Recognition */
     ps_default_search_args(config);
     ps = ps_init(config);
     if (ps == NULL) {
@@ -341,7 +366,7 @@ main(int argc, char *argv[])
     E_INFO("%s COMPILED ON: %s, AT: %s\n\n", argv[0], __DATE__, __TIME__);
         
     if (cmd_ln_boolean_r(config, "-inmic")) {
-        recognize_from_microphone();
+        recognize_from_microphone(); // Start listening for commands.
     } 
 	
     /* This here was used to debug GPIO manipulation
