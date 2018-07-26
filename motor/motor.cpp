@@ -16,13 +16,7 @@
 // If using 1/4 MicroStepping, then 800 Steps per Revolution
 // Assumes that sector one is at "front"
 
-#define DIR 46
-#define MS1 44
-#define MS2 68
-#define STEP 26
-#define ENABLE 67
-#define SECTORS 6
-#define STEPS_PER_REV 800
+
 
 exploringBB::GPIO dirGPIO(DIR);
 exploringBB::GPIO ms1GPIO(MS1);
@@ -30,7 +24,7 @@ exploringBB::GPIO ms2GPIO(MS2);
 exploringBB::GPIO stepGPIO(STEP);
 exploringBB::GPIO enableGPIO(ENABLE);
 
-std::vector<int> spicerack_sectors;
+std::vector<int> spicerack_sectors; // This array is used as a circular array to represent the spicerack's position
 
 int current_sector = 0; // The current sector that is selected
 
@@ -70,16 +64,22 @@ void initMotorPin()
 	enableGPIO.setDirection(exploringBB::OUTPUT);
 	resetEDPins();
 
+	// Setup the circular array
 	for(int i = 0; i < SECTORS; i++)
 	{
 		spicerack_sectors.push_back(i + 1);
 	}
 }
 
+// calculate the number of turns needed to turn from
+// the current sector to the desired, selected sector
+// returns a negative number for counter clockwise turns
+// positive for clockwise.
 int turnsNeeded(int selected_sector)
 {
 	int current = current_sector;
 	int turns_needed = 0;
+	int counter_clockwise_turns_needed = 0;
 	while(1)
 	{
 		if(spicerack_sectors.at(current) == selected_sector)
@@ -87,16 +87,53 @@ int turnsNeeded(int selected_sector)
 		else
 		{
 			current = (current + 1) % SECTORS;
+			turns_needed++;
 		}
 	}
 
-	return turns_needed;
+	current = current_sector;
+	while(1)
+	{
+		if(spicerack_sectors.at(current) == selected_sector)
+		{
+			break;
+		}
+		else
+		{
+			counter_clockwise_turns_needed++;
+			current = current - 1;
+			if(current == -1)
+			{
+				current = SECTORS -1;
+			}
+		}
+	}
+
+	if(turns_needed >= counter_clockwise_turns_needed)
+		return turns_needed;
+	else
+		return -counter_clockwise_turns_needed;
 }
 
-void turnMotor(int turns)
+// turn the motor a given amount of steps based on the amount of turns
+// needed. 1 turn equates to turning to 1 sector.
+void turnMotorClockwise(int turns)
 {
 	int steps = turns * (STEPS_PER_REV / SECTORS); 
+	dirGPIO.setValue(exploringBB::LOW);
+	for(int i = 0; i < steps; i ++)
+	{
+		stepGPIO.setValue(exploringBB::HIGH);
+		sleep_msec(1);
+		stepGPIO.setValue(exploringBB::LOW);
+		sleep_msec(1);
+	}
+}
 
+void turnMotorCounterClockwise(int turns)
+{
+	int steps = turns * (STEPS_PER_REV / SECTORS); 
+	dirGPIO.setValue(exploringBB::HIGH);
 	for(int i = 0; i < steps; i ++)
 	{
 		stepGPIO.setValue(exploringBB::HIGH);
@@ -107,9 +144,15 @@ void turnMotor(int turns)
 }
 
 
+// Give it the sector you want to turn it to, and the motor will
+// turn to that sector.
 void turnToSector(int sector)
 {
 	int needed_turns = turnsNeeded(sector);
-	turnMotor(needed_turns);
+
+	if(needed_turns > 0)
+	turnMotorClockwise(needed_turns);
+	else
+	turnMotorCounterClockwise(needed_turns * -1);
 	current_sector = sector;
 }
