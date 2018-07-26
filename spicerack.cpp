@@ -325,8 +325,8 @@ main(int argc, char *argv[])
         config = cmd_ln_parse_file_r(config, cont_args_def, cfg, FALSE);
     }
 
-    if (config == NULL || (cmd_ln_str_r(config, "-infile") == NULL && cmd_ln_boolean_r(config, "-inmic") == FALSE)) {
-	E_INFO("Specify '-infile <file.wav>' to recognize from file or '-inmic yes' to recognize from microphone.\n");
+    if (config == NULL || (cmd_ln_boolean_r(config, "-inmic") == FALSE)) {
+	E_INFO("Specify '-inmic yes' to recognize from microphone.\n");
         cmd_ln_free_r(config);
 	return 1;
     }
