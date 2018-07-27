@@ -10,5 +10,8 @@ spicerack: $(OBJECTS)
 spicerack.o: spicerack.cpp gpio/GPIO.h
 	$(CXX) $(CXXFLAGS) -c spicerack.cpp $(PSLIB)
 
+motor.o: motor/motor.cpp gpio/GPIO.h
+	$(CXX) $(CXXFLAGS) -c motor/motor.cpp
+
 GPIO.o: gpio/GPIO.cpp
 	$(CXX) $(CXXFLAGS) -c gpio/GPIO.cpp
