@@ -49,8 +49,8 @@ void resetEDPins()
 {
 	stepGPIO.setValue(exploringBB::LOW);
 	dirGPIO.setValue(exploringBB::LOW);
-    ms1GPIO.setValue(exploringBB::LOW); // Enable 1/4 Microstepping
-	ms2GPIO.setValue(exploringBB::HIGH);
+    ms1GPIO.setValue(exploringBB::LOW);
+	ms2GPIO.setValue(exploringBB::LOW);
 	enableGPIO.setValue(exploringBB::HIGH);
 }
 
@@ -80,6 +80,9 @@ int turnsNeeded(int selected_sector)
 	int current = current_sector;
 	int turns_needed = 0;
 	int counter_clockwise_turns_needed = 0;
+	// calculate the number of turns
+	// needed to turn to the desired sector
+	// when turning clockwise
 	while(1)
 	{
 		if(spicerack_sectors.at(current) == selected_sector)
@@ -92,6 +95,9 @@ int turnsNeeded(int selected_sector)
 	}
 
 	current = current_sector;
+	// calculate the number of turns
+	// needed to turn to the desired sector
+	// when turning counter clockwise
 	while(1)
 	{
 		if(spicerack_sectors.at(current) == selected_sector)
@@ -109,6 +115,8 @@ int turnsNeeded(int selected_sector)
 		}
 	}
 
+	// Figure out which turning direction requires the least amount of
+	// turns, and return the appropirate turn number
 	if(turns_needed >= counter_clockwise_turns_needed)
 		return turns_needed;
 	else
@@ -120,7 +128,10 @@ int turnsNeeded(int selected_sector)
 void turnMotorClockwise(int turns)
 {
 	int steps = turns * (STEPS_PER_REV / SECTORS); 
-	dirGPIO.setValue(exploringBB::LOW);
+	dirGPIO.setValue(exploringBB::LOW); // Set forward direction
+    ms1GPIO.setValue(exploringBB::LOW); // Set 1/4 Step
+	ms2GPIO.setValue(exploringBB::HIGH);
+
 	for(int i = 0; i < steps; i ++)
 	{
 		stepGPIO.setValue(exploringBB::HIGH);
@@ -128,12 +139,16 @@ void turnMotorClockwise(int turns)
 		stepGPIO.setValue(exploringBB::LOW);
 		sleep_msec(1);
 	}
+
+	resetEDPins(); // sparkfun says we gotta reset the pins when we are done
 }
 
 void turnMotorCounterClockwise(int turns)
 {
 	int steps = turns * (STEPS_PER_REV / SECTORS); 
-	dirGPIO.setValue(exploringBB::HIGH);
+	dirGPIO.setValue(exploringBB::HIGH); // direction to backwards
+    ms1GPIO.setValue(exploringBB::LOW); // Set 1/4 Step
+	ms2GPIO.setValue(exploringBB::HIGH);
 	for(int i = 0; i < steps; i ++)
 	{
 		stepGPIO.setValue(exploringBB::HIGH);
@@ -141,6 +156,8 @@ void turnMotorCounterClockwise(int turns)
 		stepGPIO.setValue(exploringBB::LOW);
 		sleep_msec(1);
 	}
+
+	resetEDPins();
 }
 
 
@@ -151,8 +168,8 @@ void turnToSector(int sector)
 	int needed_turns = turnsNeeded(sector);
 
 	if(needed_turns > 0)
-	turnMotorClockwise(needed_turns);
+		turnMotorClockwise(needed_turns);
 	else
-	turnMotorCounterClockwise(needed_turns * -1);
+		turnMotorCounterClockwise(needed_turns * -1);
 	current_sector = sector;
 }
