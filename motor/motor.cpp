@@ -1,6 +1,5 @@
 /* motor.cpp */
 #include "motor.h"
-#include "../gpio/GPIO.h"
 
 /* Pins */
 // P8_02 <--> DGND
@@ -30,7 +29,7 @@ int current_sector = 1; // The current sector that is selected
 
 /* Sleep for specified msec */
 static void
-sleep_msec(int32 ms)
+sleep_msec(int ms)
 {
 #if (defined(_WIN32) && !defined(GNUWINCE)) || defined(_WIN32_WCE)
     Sleep(ms);
