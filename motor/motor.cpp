@@ -49,7 +49,7 @@ void resetEDPins()
 {
 	stepGPIO.setValue(exploringBB::LOW);
 	dirGPIO.setValue(exploringBB::LOW);
-    ms1GPIO.setValue(exploringBB::LOW);
+    	ms1GPIO.setValue(exploringBB::LOW);
 	ms2GPIO.setValue(exploringBB::LOW);
 	enableGPIO.setValue(exploringBB::HIGH);
 }
