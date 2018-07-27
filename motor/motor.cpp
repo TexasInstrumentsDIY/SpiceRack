@@ -26,7 +26,7 @@ exploringBB::GPIO enableGPIO(ENABLE);
 
 std::vector<int> spicerack_sectors; // This array is used as a circular array to represent the spicerack's position
 
-int current_sector = 0; // The current sector that is selected
+int current_sector = 1; // The current sector that is selected
 
 /* Sleep for specified msec */
 static void
@@ -77,7 +77,7 @@ void initMotorPin()
 // positive for clockwise.
 int turnsNeeded(int selected_sector)
 {
-	int current = current_sector;
+	int current_index = current_sector - 1;
 	int turns_needed = 0;
 	int counter_clockwise_turns_needed = 0;
 	// calculate the number of turns
@@ -85,32 +85,32 @@ int turnsNeeded(int selected_sector)
 	// when turning clockwise
 	while(1)
 	{
-		if(spicerack_sectors.at(current) == selected_sector)
+		if(spicerack_sectors.at(current_index) == selected_sector)
 			break;
 		else
 		{
-			current = (current + 1) % SECTORS;
+			current_index = (current_index + 1) % SECTORS;
 			turns_needed++;
 		}
 	}
 
-	current = current_sector;
+	current_index = current_sector - 1;
 	// calculate the number of turns
 	// needed to turn to the desired sector
 	// when turning counter clockwise
 	while(1)
 	{
-		if(spicerack_sectors.at(current) == selected_sector)
+		if(spicerack_sectors.at(current_index) == selected_sector)
 		{
 			break;
 		}
 		else
 		{
 			counter_clockwise_turns_needed++;
-			current = current - 1;
-			if(current == -1)
+			current_index = current_index - 1;
+			if(current_index == -1)
 			{
-				current = SECTORS -1;
+				current_index = SECTORS -1;
 			}
 		}
 	}
@@ -120,7 +120,7 @@ int turnsNeeded(int selected_sector)
 	if(turns_needed >= counter_clockwise_turns_needed)
 		return turns_needed;
 	else
-		return -counter_clockwise_turns_needed;
+		return -1*counter_clockwise_turns_needed;
 }
 
 // turn the motor a given amount of steps based on the amount of turns
