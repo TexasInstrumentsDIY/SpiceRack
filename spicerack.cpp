@@ -68,7 +68,7 @@
 #include "pocketsphinx/src/libpocketsphinx/kws_search.h"
 #include "pocketsphinx/include/pocketsphinx.h"
 #include "gpio/GPIO.h"
-
+#include "motor/motor.h"
 glist_t detected_kws[256] = {0}; // pre-allocate 256 sized array for holding detected keywords
 glist_t temp[256] = {0}; // temporary array used when sorting detected_kws array based on prob score 
 
@@ -236,11 +236,12 @@ recognize_from_microphone()
 	
     /* Initialize GPIO pins for speech status LED's */
     E_INFO("About to set ready\n");
-    exploringBB::GPIO readyLED(26); //p8_14
+    exploringBB::GPIO readyLED(27); //p9_12
     E_INFO("About to set busy\n");
-    exploringBB::GPIO busyLED(47); //p8_15
+    exploringBB::GPIO busyLED(61); //p9_15
     E_INFO("Setting direction\n");
     while(readyLED.setDirection(exploringBB::OUTPUT) == -1){};
+    E_INFO("Setting direction 2\n");
     while(busyLED.setDirection(exploringBB::OUTPUT) == -1){};
     E_INFO("Setting initial state\n");
     while(readyLED.setValue(exploringBB::LOW) == -1) {};
@@ -365,7 +366,9 @@ main(int argc, char *argv[])
     }
 
     E_INFO("%s COMPILED ON: %s, AT: %s\n\n", argv[0], __DATE__, __TIME__);
-        
+    E_INFO("Initializing MOTOR\n");
+    initMotorPin();
+
     if (cmd_ln_boolean_r(config, "-inmic")) {
         recognize_from_microphone(); // Start listening for commands.
     } 

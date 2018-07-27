@@ -17,11 +17,11 @@
 
 
 
-exploringBB::GPIO dirGPIO(DIR);
-exploringBB::GPIO ms1GPIO(MS1);
-exploringBB::GPIO ms2GPIO(MS2);
-exploringBB::GPIO stepGPIO(STEP);
-exploringBB::GPIO enableGPIO(ENABLE);
+exploringBB::GPIO* dirGPIO;
+exploringBB::GPIO* ms1GPIO;
+exploringBB::GPIO* ms2GPIO;
+exploringBB::GPIO* stepGPIO;
+exploringBB::GPIO* enableGPIO;
 
 std::vector<int> spicerack_sectors; // This array is used as a circular array to represent the spicerack's position
 
@@ -46,21 +46,47 @@ sleep_msec(int ms)
 
 void resetEDPins()
 {
-	stepGPIO.setValue(exploringBB::LOW);
-	dirGPIO.setValue(exploringBB::LOW);
-    	ms1GPIO.setValue(exploringBB::LOW);
-	ms2GPIO.setValue(exploringBB::LOW);
-	enableGPIO.setValue(exploringBB::HIGH);
+	printf("reseting motor pins\n");
+	stepGPIO->setValue(exploringBB::LOW);
+	printf("reseting motor pins 2\n");
+	dirGPIO->setValue(exploringBB::LOW);
+	printf("reseting motor pins 3\n");
+    	ms1GPIO->setValue(exploringBB::LOW);
+	printf("reseting motor pins 4\n");
+	ms2GPIO->setValue(exploringBB::LOW);
+	printf("reseting motor pins 5\n");
+	enableGPIO->setValue(exploringBB::HIGH);
+	printf("reseting motor pins 6\n");
 }
+
 
 void initMotorPin()
 {
+        printf("initing motoring pins a \n");
+	dirGPIO = new exploringBB::GPIO(DIR);
+        printf("initing motoring pins b\n");
+	ms1GPIO = new exploringBB::GPIO(MS1);
+        printf("initing motoring pins c\n");
+	ms2GPIO = new exploringBB::GPIO(MS2);
+        printf("initing motoring pins d\n");
+        stepGPIO = new exploringBB::GPIO(STEP);
+        printf("initing motoring pins e\n");
+	sleep_msec(1000);
+	enableGPIO = new exploringBB::GPIO(ENABLE);
 
-	dirGPIO.setDirection(exploringBB::OUTPUT);
-    ms1GPIO.setDirection(exploringBB::OUTPUT);
-	ms2GPIO.setDirection(exploringBB::OUTPUT);
-	stepGPIO.setDirection(exploringBB::OUTPUT);
-	enableGPIO.setDirection(exploringBB::OUTPUT);
+        printf("initing motoring pins \n");
+	while(dirGPIO->setDirection(exploringBB::OUTPUT)==-1){};
+
+        printf("initing motoring pins 2 \n");
+    	while(ms1GPIO->setDirection(exploringBB::OUTPUT)==-1){};
+        printf("initing motoring pins 3\n");
+	while(ms2GPIO->setDirection(exploringBB::OUTPUT)==-1){};
+        printf("initing motoring pins 4\n");
+	while(stepGPIO->setDirection(exploringBB::OUTPUT)==-1){};
+        printf("initing motoring pins 5\n");
+	sleep_msec(1000);
+	while(enableGPIO->setDirection(exploringBB::OUTPUT)==-1){};
+        printf("initing motoring pins 6\n");
 	resetEDPins();
 
 	// Setup the circular array
@@ -127,15 +153,15 @@ int turnsNeeded(int selected_sector)
 void turnMotorClockwise(int turns)
 {
 	int steps = turns * (STEPS_PER_REV / SECTORS); 
-	dirGPIO.setValue(exploringBB::LOW); // Set forward direction
-    ms1GPIO.setValue(exploringBB::LOW); // Set 1/4 Step
-	ms2GPIO.setValue(exploringBB::HIGH);
+	dirGPIO->setValue(exploringBB::LOW); // Set forward direction
+    ms1GPIO->setValue(exploringBB::LOW); // Set 1/4 Step
+	ms2GPIO->setValue(exploringBB::HIGH);
 
 	for(int i = 0; i < steps; i ++)
 	{
-		stepGPIO.setValue(exploringBB::HIGH);
+		stepGPIO->setValue(exploringBB::HIGH);
 		sleep_msec(1);
-		stepGPIO.setValue(exploringBB::LOW);
+		stepGPIO->setValue(exploringBB::LOW);
 		sleep_msec(1);
 	}
 
@@ -145,14 +171,14 @@ void turnMotorClockwise(int turns)
 void turnMotorCounterClockwise(int turns)
 {
 	int steps = turns * (STEPS_PER_REV / SECTORS); 
-	dirGPIO.setValue(exploringBB::HIGH); // direction to backwards
-    ms1GPIO.setValue(exploringBB::LOW); // Set 1/4 Step
-	ms2GPIO.setValue(exploringBB::HIGH);
+	dirGPIO->setValue(exploringBB::HIGH); // direction to backwards
+    ms1GPIO->setValue(exploringBB::LOW); // Set 1/4 Step
+	ms2GPIO->setValue(exploringBB::HIGH);
 	for(int i = 0; i < steps; i ++)
 	{
-		stepGPIO.setValue(exploringBB::HIGH);
+		stepGPIO->setValue(exploringBB::HIGH);
 		sleep_msec(1);
-		stepGPIO.setValue(exploringBB::LOW);
+		stepGPIO->setValue(exploringBB::LOW);
 		sleep_msec(1);
 	}
 
