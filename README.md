@@ -6,6 +6,8 @@ See guide [here](https://github.com/TexasInstrumentsDIY/SpiceRack/wiki/Installat
 
 ## Resources
 
+[HACKSTER.IO PROJECT PAGE](https://www.hackster.io/106812/voice-controlled-spice-rack-235834)
+
 [Beagle Board Tutorial](http://beagleboard.github.io/bone101/Support/bone101/)
 
 [Beagle Board GPIO Tutorial using C++](http://exploringbeaglebone.com/chapter6/)
