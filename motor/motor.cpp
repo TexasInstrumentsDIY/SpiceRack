@@ -160,9 +160,9 @@ void turnMotorClockwise(int turns)
 	for(int i = 0; i < steps; i ++)
 	{
 		stepGPIO->setValue(exploringBB::HIGH);
-		sleep_msec(1);
+		sleep_msec(10);
 		stepGPIO->setValue(exploringBB::LOW);
-		sleep_msec(1);
+		sleep_msec(10);
 	}
 
 	resetEDPins(); // sparkfun says we gotta reset the pins when we are done
@@ -177,9 +177,9 @@ void turnMotorCounterClockwise(int turns)
 	for(int i = 0; i < steps; i ++)
 	{
 		stepGPIO->setValue(exploringBB::HIGH);
-		sleep_msec(1);
+		sleep_msec(10);
 		stepGPIO->setValue(exploringBB::LOW);
-		sleep_msec(1);
+		sleep_msec(10);
 	}
 
 	resetEDPins();

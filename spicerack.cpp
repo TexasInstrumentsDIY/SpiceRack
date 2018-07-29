@@ -78,12 +78,12 @@ glist_t temp[256] = {0}; // temporary array used when sorting detected_kws array
 uint32 kws_num = 0; // a variable that holds the count of keywords spotted
 
 std::string str_spices[6] = {
-    "ONE",
-    "TWO",
-    "THREE",
-    "FOUR",
-    "FIVE",
-    "SIX"
+    "CUMIN SEED",
+    "GARLIC POWDER",
+    "HAMBURGER SEASONING",
+    "BAY LEAVES",
+    "PUMPKIN PIE SPICE",
+    "MEXICAN OREGANO"
 };
 
 
@@ -261,9 +261,9 @@ recognize_from_microphone()
 	
     /* Initialize GPIO pins for speech status LED's */
     E_INFO("About to set ready\n");
-    exploringBB::GPIO readyLED(27); //p9_12
+    exploringBB::GPIO readyLED(27); //p8_17
     E_INFO("About to set busy\n");
-    exploringBB::GPIO busyLED(61); //p9_15
+    exploringBB::GPIO busyLED(61); //p8_26
     E_INFO("Setting direction\n");
     while(readyLED.setDirection(exploringBB::OUTPUT) == -1){};
     E_INFO("Setting direction 2\n");
@@ -352,6 +352,7 @@ recognize_from_microphone()
             if(kws_num > 0)
             {
                 keyphrase = ((kws_detection_t*) gnode_ptr(detected_kws[0]))->keyphrase;
+                
 
                 for(int i = 0; i < SECTORS; i++)
                 {
@@ -360,10 +361,9 @@ recognize_from_microphone()
                         busyLED.setValue(exploringBB::LOW);
                         readyLED.setValue(exploringBB::LOW);
                         std::string spice_str(keyphrase);
-                        turn_str += (" " + spice_str);
+                        turn_str += (" " + spice_str + "\n");
                        // writeDataToLCD(turn_str.c_str(), &tm4c123);
                         E_INFO(turn_str.c_str());
-                        E_INFO("\n");
                         turnToSector(i + 1);
                        // writeDataToLCD(spice_str.c_str(), &tm4c123);
                         readyLED.setValue(exploringBB::HIGH);
