@@ -69,7 +69,7 @@
 #include "pocketsphinx/include/pocketsphinx.h"
 #include "gpio/GPIO.h"
 #include "motor/motor.h"
-
+#include "i2c/I2CDevice.h"
 #define TM4CADDR 0x3C
 
 glist_t detected_kws[256] = {0}; // pre-allocate 256 sized array for holding detected keywords
@@ -233,14 +233,14 @@ sleep_msec(int32 ms)
  */
 
 
-void writeDataToLCD(char* data, exploringBB I2CDevice tm4c123)
+void writeDataToLCD(const char* data, exploringBB::I2CDevice* tm4c123)
 {
-    tm4c123.write('<');
+    tm4c123->write('<');
     for(int i = 0; data[i] != NULL; i++)
     {
-        tm4c123.write(data[i]);
+        tm4c123->write(data[i]);
     }
-    tm4c123.write('>');
+    tm4c123->write('>');
 }
 
 static void
@@ -257,7 +257,7 @@ recognize_from_microphone()
 	const char* keyphrase;
 
     /* Initialize I2C for LCD display */
-    exploringBB::I2CDevice tm4c123(1, TM4CADDR);
+   // exploringBB::I2CDevice tm4c123(1, TM4CADDR);
 	
     /* Initialize GPIO pins for speech status LED's */
     E_INFO("About to set ready\n");
@@ -353,7 +353,7 @@ recognize_from_microphone()
             {
                 keyphrase = ((kws_detection_t*) gnode_ptr(detected_kws[0]))->keyphrase;
 
-                for(int i = 0; i < SECTOR; i++)
+                for(int i = 0; i < SECTORS; i++)
                 {
                     if(str_spices[i].compare(keyphrase) == 0)
                     {
@@ -361,11 +361,11 @@ recognize_from_microphone()
                         readyLED.setValue(exploringBB::LOW);
                         std::string spice_str(keyphrase);
                         turn_str += (" " + spice_str);
-                        writeDataToLCD(turn_str.c_str(), tm4c123);
+                       // writeDataToLCD(turn_str.c_str(), &tm4c123);
                         E_INFO(turn_str.c_str());
                         E_INFO("\n");
                         turnToSector(i + 1);
-                        writeDataToLCD(spice_str.c_str(), tm4c123);
+                       // writeDataToLCD(spice_str.c_str(), &tm4c123);
                         readyLED.setValue(exploringBB::HIGH);
                         break;
                     }
