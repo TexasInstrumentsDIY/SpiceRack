@@ -4,12 +4,12 @@
 #include "../gpio/GPIO.h"
 #include <vector>
 
-#define DIR 46
-#define MS1 44
-#define MS2 68
-#define STEP 26
-#define ENABLE 45
-#define SECTORS 6
+#define DIR 46    //P8_16
+#define MS1 44    //P8_12
+#define MS2 68    //P8_38
+#define STEP 26   //P8_14
+#define ENABLE 45 //P8_13
+#define SECTORS 6 
 #define STEPS_PER_REV 800
 
 void initMotorPin();
