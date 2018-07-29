@@ -157,14 +157,20 @@ static const arg_t cont_args_def[] = {
 
 static ps_decoder_t *ps;
 static cmd_ln_t *config;
-static FILE *rawfd;
-
-static void
 
 
+bool is_substr(const char* sub, const char* full)
+{
+	for(int i = 0; sub[i] != NULL; i++)
+	{
+		if(sub[i] != full[i])
+			return false;
+	}
+	return true;
+}	
 
 
-print_word_times()
+static void print_word_times(void)
 {
     int frame_rate = cmd_ln_int32_r(config, "-frate");
     ps_seg_t *iter = ps_seg_iter(ps);
@@ -352,11 +358,9 @@ recognize_from_microphone()
             if(kws_num > 0)
             {
                 keyphrase = ((kws_detection_t*) gnode_ptr(detected_kws[0]))->keyphrase;
-                
-
                 for(int i = 0; i < SECTORS; i++)
                 {
-                    if(str_spices[i].compare(keyphrase) == 0)
+                    if(is_substr(str_spices[i].c_str(), keyphrase))
                     {
                         busyLED.setValue(exploringBB::LOW);
                         readyLED.setValue(exploringBB::LOW);
