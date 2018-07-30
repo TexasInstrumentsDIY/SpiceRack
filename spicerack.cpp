@@ -253,7 +253,7 @@ static void
 recognize_from_microphone()
 {
     ad_rec_t *ad;
-    int16 adbuf[4096]; // Buffer for holding audio data from mic
+    int16 adbuf[2048]; // Buffer for holding audio data from mic
     uint8 utt_started, in_speech; // Variables to determine speech status
     int32 k;
 	int32 i = 0;
@@ -384,7 +384,6 @@ recognize_from_microphone()
             E_INFO("Ready to listen....\n");
 	    busyLED.setValue(exploringBB::LOW);
         }
-       // sleep_msec(100);
     }
     ad_close(ad);
 }
