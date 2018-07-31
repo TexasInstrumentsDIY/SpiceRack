@@ -17,4 +17,4 @@ GPIO.o: gpio/GPIO.cpp
 	$(CXX) $(CXXFLAGS) -c gpio/GPIO.cpp
 
 I2CDevice.o: i2c/I2CDevice.cpp
-	$(CXX) $(CXXFLAGS) -c i2c/i2CDevice.cpp
+	$(CXX) $(CXXFLAGS) -c i2c/I2CDevice.cpp

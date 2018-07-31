@@ -6,7 +6,7 @@
 
 #define DIR 46    //P8_16
 #define MS1 44    //P8_12
-#define MS2 38    //P8_38
+#define MS2 65    //P8_18
 #define STEP 26   //P8_14
 #define ENABLE 45 //P8_13
 #define SECTORS 6 

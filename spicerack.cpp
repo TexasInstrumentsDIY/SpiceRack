@@ -294,24 +294,29 @@ recognize_from_microphone()
 	kws_search_t* kws_ps = 0;
 	glist_t detection_list = 0;
 	const char* keyphrase;
-    initMotorPin();
-    setMotorPinDir();
-    E_INFO("setting lcd pins\n");
-    exploringBB::GPIO lcd1(10);
+//    initMotorPin();
+    E_INFO("Setting motor pins\n");
+//    setMotorPinDir();
+   
+//    E_INFO("setting lcd pins\n");
+/*    exploringBB::GPIO lcd1(10);
     exploringBB::GPIO lcd2(11); 
     exploringBB::GPIO lcd3(9);
     exploringBB::GPIO lcd4(81);
     lcd1.setDirection(exploringBB::OUTPUT);
     lcd2.setDirection(exploringBB::OUTPUT);
     lcd3.setDirection(exploringBB::OUTPUT);
-    lcd4.setDirection(exploringBB::OUTPUT);   
-    E_INFO("Initing LCD Pin Values");
+    lcd4.setDirection(exploringBB::OUTPUT);   */
+//    E_INFO("Initing LCD Pin Values");
+    /*
     lcd1.setValue(exploringBB::HIGH);
     lcd2.setValue(exploringBB::LOW);
     lcd3.setValue(exploringBB::LOW);
     lcd4.setValue(exploringBB::LOW);
-
+*/
+   
     /* Initialize GPIO pins for speech status LED's */
+   initMotorPin();
     E_INFO("About to set ready\n");
     exploringBB::GPIO readyLED(27); //p8_17
     E_INFO("About to set busy\n");
@@ -320,7 +325,7 @@ recognize_from_microphone()
     while(readyLED.setDirection(exploringBB::OUTPUT) == -1){};
     E_INFO("Setting direction 2\n");
     while(busyLED.setDirection(exploringBB::OUTPUT) == -1){};
-
+    setMotorPinDir();
 
     E_INFO("Setting initial state\n");
     while(readyLED.setValue(exploringBB::LOW) == -1) {};
@@ -414,13 +419,13 @@ recognize_from_microphone()
                         std::string spice_str(keyphrase);
                         turn_str += (" " + spice_str + "\n");
                         //writeDataToLCD(turn_str.c_str(), &tm4c123)
-			             lcd4.setValue(exploringBB::HIGH);
-		                 writeDataToLCD(&lcd1, &lcd2, &lcd3, i+1);
+//			             lcd4.setValue(exploringBB::HIGH);
+//		                 writeDataToLCD(&lcd1, &lcd2, &lcd3, i+1);
 
 
                         E_INFO(turn_str.c_str());
                         turnToSector(i + 1);
-                         lcd4.setValue(exploringBB::LOW);
+//                         lcd4.setValue(exploringBB::LOW);
 
                        // writeDataToLCD(spice_str.c_str(), &tm4c123);
                         readyLED.setValue(exploringBB::HIGH);
