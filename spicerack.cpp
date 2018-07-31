@@ -264,7 +264,14 @@ recognize_from_microphone()
 
     /* Initialize I2C for LCD display */
    // exploringBB::I2CDevice tm4c123(1, TM4CADDR);
-	
+    exploringBB::GPIO lcd1(10);
+    exploringBB::GPIO lcd2(11); 
+    exploringBB::GPIO lcd3(9);
+    exploringBB::GPIO lcd4(81);
+    lcd1.setDirection(exploringBB::OUTPUT);
+    lcd2.setDirection(exploringBB::OUTPUT);
+    lcd3.setDirection(exploringBB::OUTPUT);
+    lcd4.setDirection(exploringBB::OUTPUT);   
     /* Initialize GPIO pins for speech status LED's */
     E_INFO("About to set ready\n");
     exploringBB::GPIO readyLED(27); //p8_17
@@ -419,7 +426,7 @@ main(int argc, char *argv[])
 
     E_INFO("%s COMPILED ON: %s, AT: %s\n\n", argv[0], __DATE__, __TIME__);
     E_INFO("Initializing MOTOR\n");
-    initMotorPin();
+   // initMotorPin();
 
     if (cmd_ln_boolean_r(config, "-inmic")) {
         recognize_from_microphone(); // Start listening for commands.

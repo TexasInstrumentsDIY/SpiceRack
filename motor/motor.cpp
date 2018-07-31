@@ -46,17 +46,17 @@ sleep_msec(int ms)
 
 void resetEDPins()
 {
-	printf("reseting motor pins\n");
+//	printf("reseting motor pins\n");
 	stepGPIO->setValue(exploringBB::LOW);
-	printf("reseting motor pins 2\n");
+//	printf("reseting motor pins 2\n");
 	dirGPIO->setValue(exploringBB::LOW);
-	printf("reseting motor pins 3\n");
+//	printf("reseting motor pins 3\n");
     	ms1GPIO->setValue(exploringBB::LOW);
-	printf("reseting motor pins 4\n");
+//	printf("reseting motor pins 4\n");
 	ms2GPIO->setValue(exploringBB::LOW);
-	printf("reseting motor pins 5\n");
+//	printf("reseting motor pins 5\n");
 	enableGPIO->setValue(exploringBB::HIGH);
-	printf("reseting motor pins 6\n");
+//	printf("reseting motor pins 6\n");
 }
 
 
@@ -139,10 +139,10 @@ int turnsNeeded(int selected_sector)
 			}
 		}
 	}
-
+        printf("Clockwise Turns Needed: %d || CounterCW Turns Needed: %d\n", turns_needed, counter_clockwise_turns_needed);;
 	// Figure out which turning direction requires the least amount of
 	// turns, and return the appropirate turn number
-	if(turns_needed >= counter_clockwise_turns_needed)
+	if(turns_needed <= counter_clockwise_turns_needed)
 		return turns_needed;
 	else
 		return -1*counter_clockwise_turns_needed;
@@ -152,6 +152,7 @@ int turnsNeeded(int selected_sector)
 // needed. 1 turn equates to turning to 1 sector.
 void turnMotorClockwise(int turns)
 {
+	printf("Turning Motor Clockwise %d turns\n", turns);
 	int steps = turns * (STEPS_PER_REV / SECTORS); 
 	dirGPIO->setValue(exploringBB::LOW); // Set forward direction
     ms1GPIO->setValue(exploringBB::LOW); // Set 1/4 Step
@@ -170,6 +171,7 @@ void turnMotorClockwise(int turns)
 
 void turnMotorCounterClockwise(int turns)
 {
+	printf("Turning Motor CounterClockwise %d turns\n", turns);
 	int steps = turns * (STEPS_PER_REV / SECTORS); 
 	dirGPIO->setValue(exploringBB::HIGH); // direction to backwards
     ms1GPIO->setValue(exploringBB::LOW); // Set 1/4 Step
@@ -181,7 +183,7 @@ void turnMotorCounterClockwise(int turns)
 		stepGPIO->setValue(exploringBB::LOW);
 		sleep_msec(10);
 	}
-
+	
 	resetEDPins();
 }
 
