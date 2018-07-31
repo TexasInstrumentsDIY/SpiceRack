@@ -238,15 +238,48 @@ sleep_msec(int32 ms)
  *     }
  */
 
+#define SECTOR1 0x01;
+#define SECTOR2 0x02;
+#define SECTOR3 0x03;
+#define SECTOR4 0x04;
+#define SECTOR5 0x05;
+#define SECTOR6 0x06;
 
-void writeDataToLCD(const char* data, exploringBB::I2CDevice* tm4c123)
+void writeDataToLCD(exploringBB::GPIO *lcd1,exploringBB::GPIO *lcd2,exploringBB::GPIO *lcd3, int sector)
 {
-    tm4c123->write('<');
-    for(int i = 0; data[i] != NULL; i++)
+    switch(sector)
     {
-        tm4c123->write(data[i]);
+        case 1:
+        lcd1->setValue(exploringBB::HIGH);
+        lcd2->setValue(exploringBB::LOW);
+        lcd3->setValue(exploringBB::LOW);
+        break;
+        case 2:
+        lcd1->setValue(exploringBB::LOW);
+        lcd2->setValue(exploringBB::HIGH);
+        lcd3->setValue(exploringBB::LOW);
+        break;
+        case 3:
+        lcd1->setValue(exploringBB::HIGH);
+        lcd2->setValue(exploringBB::HIGH);
+        lcd3->setValue(exploringBB::LOW);
+        break;
+        case 4:
+        lcd1->setValue(exploringBB::LOW);
+        lcd2->setValue(exploringBB::LOW);
+        lcd3->setValue(exploringBB::HIGH);
+        break;
+        case 5:
+        lcd1->setValue(exploringBB::HIGH);
+        lcd2->setValue(exploringBB::LOW);
+        lcd3->setValue(exploringBB::HIGH);
+        break;
+        case 6:
+        lcd1->setValue(exploringBB::LOW);
+        lcd2->setValue(exploringBB::HIGH);
+        lcd3->setValue(exploringBB::HIGH);
+        break;
     }
-    tm4c123->write('>');
 }
 
 static void
@@ -272,6 +305,12 @@ recognize_from_microphone()
     lcd2.setDirection(exploringBB::OUTPUT);
     lcd3.setDirection(exploringBB::OUTPUT);
     lcd4.setDirection(exploringBB::OUTPUT);   
+    E_INFO("Initing LCD Pin Values");
+    lcd1.setValue(exploringBB::HIGH);
+    lcd2.setValue(exploringBB::LOW);
+    lcd3.setValue(exploringBB::LOW);
+    lcd4.setValue(exploringBB::LOW);
+
     /* Initialize GPIO pins for speech status LED's */
     E_INFO("About to set ready\n");
     exploringBB::GPIO readyLED(27); //p8_17
@@ -375,12 +414,14 @@ recognize_from_microphone()
                         std::string spice_str(keyphrase);
                         turn_str += (" " + spice_str + "\n");
                         //writeDataToLCD(turn_str.c_str(), &tm4c123)
-			lcd4.setValue(exploringBB::HIGH);
-		        
+			             lcd4.setValue(exploringBB::HIGH);
+		                 writeDataToLCD(&lcd1, &lcd2, &lcd3, i+1);
 
 
                         E_INFO(turn_str.c_str());
                         turnToSector(i + 1);
+                         lcd4.setValue(exploringBB::LOW);
+
                        // writeDataToLCD(spice_str.c_str(), &tm4c123);
                         readyLED.setValue(exploringBB::HIGH);
                         break;
