@@ -74,6 +74,9 @@ void initMotorPin()
 	sleep_msec(1000);
 	enableGPIO = new exploringBB::GPIO(ENABLE);
 
+}
+void setMotorPinDir()
+{
         printf("initing motoring pins \n");
 	while(dirGPIO->setDirection(exploringBB::OUTPUT)==-1){};
 
@@ -95,7 +98,6 @@ void initMotorPin()
 		spicerack_sectors.push_back(i + 1);
 	}
 }
-
 // calculate the number of turns needed to turn from
 // the current sector to the desired, selected sector
 // returns a negative number for counter clockwise turns

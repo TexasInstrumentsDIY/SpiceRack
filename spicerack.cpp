@@ -261,9 +261,9 @@ recognize_from_microphone()
 	kws_search_t* kws_ps = 0;
 	glist_t detection_list = 0;
 	const char* keyphrase;
-
-    /* Initialize I2C for LCD display */
-   // exploringBB::I2CDevice tm4c123(1, TM4CADDR);
+    initMotorPin();
+    setMotorPinDir();
+    E_INFO("setting lcd pins\n");
     exploringBB::GPIO lcd1(10);
     exploringBB::GPIO lcd2(11); 
     exploringBB::GPIO lcd3(9);
@@ -281,10 +281,11 @@ recognize_from_microphone()
     while(readyLED.setDirection(exploringBB::OUTPUT) == -1){};
     E_INFO("Setting direction 2\n");
     while(busyLED.setDirection(exploringBB::OUTPUT) == -1){};
+
+
     E_INFO("Setting initial state\n");
     while(readyLED.setValue(exploringBB::LOW) == -1) {};
     while(busyLED.setValue(exploringBB::HIGH) == -1) {};
-    
     /* Check if Microphone or Speech Rec has failed to start */
     if ((ad = ad_open_dev(cmd_ln_str_r(config, "-adcdev"),
                           (int) cmd_ln_float32_r(config,
@@ -373,7 +374,11 @@ recognize_from_microphone()
                         readyLED.setValue(exploringBB::LOW);
                         std::string spice_str(keyphrase);
                         turn_str += (" " + spice_str + "\n");
-                       // writeDataToLCD(turn_str.c_str(), &tm4c123);
+                        //writeDataToLCD(turn_str.c_str(), &tm4c123)
+			lcd4.setValue(exploringBB::HIGH);
+		        
+
+
                         E_INFO(turn_str.c_str());
                         turnToSector(i + 1);
                        // writeDataToLCD(spice_str.c_str(), &tm4c123);
