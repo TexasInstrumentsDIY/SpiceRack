@@ -1,5 +1,5 @@
 # Voice Controlled SpiceRack
-![Spicerack](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/DSCPDC_0003_BURST20180801125704470_COVER.JPG)
+[![IMAGE ALT TEXT HERE](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/DSCPDC_0003_BURST20180801125704470_COVER.JPG)](https://www.youtube.com/watch?v=b-ZcNR-dW58)
 
 ## Usage
 
