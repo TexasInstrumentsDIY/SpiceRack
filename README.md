@@ -1,5 +1,5 @@
 # SpiceRack
-![Spicerack](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/DSC_0258.JPG
+![Spicerack](https://github.com/TexasInstrumentsDIY/SpiceRack/blob/master/DSC_0258.JPG)
 
 ## Usage
 
